@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rinjani Nature | Premium Trekking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+<body>
+
+        <div class="top-header">
+            <div class="container">
+                <div class="top-socials">
+                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <nav class="navbar">
+            <div class="container nav-container">
+                <a href="index.html" class="logo">
+                    <img src="images/logoexpedition.png" alt="Logo" class="nav-logo-img"> 
+                   RINJANI<span class="highlight">NATURE</span>
+                </a>
+                
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#info-section">Info</a></li>
+                    <!-- Mengarahkan langsung ke file list blog di dalam folder blog -->
+                    <li><a href="blog/blog-list.html">Blog</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+                
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Discover the Majestic Rinjani</h1>
+            <p>Premium trekking experiences tailored for adventurers from the Netherlands and beyond.</p>
+            <div class="hero-buttons">
+                <a href="#packages" class="btn btn-primary">View Packages</a>
+                <a href="plan-your-trip-lombok.html" class="btn btn-outline">Plan Your Trip</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features section-padding">
+        <div class="container">
+            <div class="section-header">
+                <a href="blog/blog-why-choose-us.html" class="text-link">
+                   <h2>Why Trek With Us?</h2> 
+                </a>
+                <div class="line"></div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Safety First</h3>
+                    <p>Certified guides and high-quality equipment ensuring European safety standards.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Eco-Friendly</h3>
+                    <p>We practice "Leave No Trace" to preserve Rinjani's beauty for future generations.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Premium Service</h3>
+                    <p>Experience comfort in the wild with our deluxe camping setup and nutritious meals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="packages" class="packages section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Trekking Packages</h2>
+                <p>Choose the adventure that fits your schedule.</p>
+                <div class="line"></div>
+            </div>
+            
+            <!-- Grid Baris 1 -->
+            <div class="packages-grid">
+                
+                <!-- 1. Summit & Lake -->
+                <div class="package-card">
+                    <div class="card-image" style="background-image: url('images/summit-lake.jpg');">
+                        <span class="badge">Most Popular</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Summit & Lake</h3>
+                        <div class="meta">3 Days / 2 Nights</div>
+                        <p>The complete experience: Summit sunrise, Segara Anak lake, and hot springs.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Professional Guide</li>
+                            <li><i class="fas fa-check"></i> Porter Service</li>
+                            <li><i class="fas fa-check"></i> All Meals & Drinks</li>
+                        </ul>
+                        <a href="packages/package-summit-lake.html" class="btn btn-primary full-width">Read More</a>
+                    </div>
+                </div>
+
+                <!-- 2. Summit Attack -->
+                <div class="package-card">
+                    <div class="card-image" style="background-image: url('images/summit-attack.jpg');"></div>
+                    <div class="card-body">
+                        <h3>Summit Attack</h3>
+                        <div class="meta">2 Days / 1 Night</div>
+                        <p>Perfect for fit trekkers with limited time. Reach the top of Indonesia.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Professional Guide</li>
+                            <li><i class="fas fa-check"></i> Porter Service</li>
+                            <li><i class="fas fa-check"></i> All Meals & Drinks</li>
+                        </ul>
+                        <a href="packages/package-summit-attack.html" class="btn btn-primary full-width">Read More</a>
+                    </div>
+                </div>
+
+                <!-- 3. Crater Rim Senaru -->
+                <div class="package-card">
+                    <div class="card-image" style="background-image: url('images/crater-senaru.jpg');"></div>
+                    <div class="card-body">
+                        <h3>Crater Rim Senaru</h3>
+                        <div class="meta">2 Days / 1 Night</div>
+                        <p>A more relaxed trek with stunning sunset views over the crater lake.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Professional Guide</li>
+                            <li><i class="fas fa-check"></i> Porter Service</li>
+                            <li><i class="fas fa-check"></i> All Meals & Drinks</li>
+                        </ul>
+                        <a href="packages/package-crater-rim.html" class="btn btn-primary full-width">Read More</a>
+                    </div>
+                </div>
+            </div> 
+            
+            <!-- Grid Baris 2 -->
+            <div class="packages-grid" style="margin-top: 30px;">
+                
+                <!-- 4. 2D 1N via Sembalun -->
+                <div class="package-card">
+                    <div class="card-image" style="background-image: url('images/2d1n-sembalun.jpg');">
+                        <span class="badge">Best Seller</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>2D 1N via Sembalun</h3>
+                        <div class="meta">2 Days / 1 Night</div>
+                        <p>Express trekking for fit hikers. Reach the Summit of Rinjani (3,726m) and return via the same savannah route.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Professional Guide</li>
+                            <li><i class="fas fa-check"></i> Porter Service</li>
+                            <li><i class="fas fa-check"></i> All Meals & Drinks</li>
+                        </ul>
+                        <a href="packages/package-crater-rim.html" class="btn btn-primary full-width">Read More</a>
+                    </div>
+                </div>
+
+                <!-- 5. 3D 2N via Sembalun -->
+                <div class="package-card">
+                    <div class="card-image" style="background-image: url('images/3d2n-sembalun.jpg');">
+                        <span class="badge">Most Popular</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>3D 2N via Sembalun</h3>
+                        <div class="meta">3 Days / 2 Nights</div>
+                        <p>The complete adventure. Summit sunrise, descend to Segara Anak Lake & Hot Springs, finish in Senaru.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Professional Guide</li>
+                            <li><i class="fas fa-check"></i> Porter Service</li>
+                            <li><i class="fas fa-check"></i> All Meals & Drinks</li>
+                        </ul>
+                        <a href="packages/package-summit-attack.html" class="btn btn-primary full-width">Read More</a>
+                    </div>
+                </div>
+
+                <!-- 6. 4D 3N via Sembalun -->
+                <div class="package-card">
+                    <div class="card-image" style="background-image: url('images/4d3n-sembalun.jpg');">
+                        <span class="badge">Relaxed Trip</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>4D 3N via Sembalun</h3>
+                        <div class="meta">4 Days / 3 Nights</div>
+                        <p>Enjoy Rinjani at a slower pace. More time at the Lake, Hot Springs, and caves. Perfect for photography.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Professional Guide</li>
+                            <li><i class="fas fa-check"></i> Porter Service</li>
+                            <li><i class="fas fa-check"></i> All Meals & Drinks</li>
+                        </ul>
+                        <a href="packages/package-4d3n-sembalun.html" class="btn btn-primary full-width">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Common Questions <br><span>(Pertanyaan Umum)</span></h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Why Choose Rinjani Nature?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>Experience Lombok with a purpose.</strong> We craft personalized adventures that not only thrill but also respect the environment and support local communities. Our strict <strong>‘leave no trace’ ethos</strong> and genuine passion for the island’s culture and nature set us apart as the premier eco-trekking provider in 2026.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is the Best Time to Climb Mount Rinjani?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The optimal time to trek Mount Rinjani is during the dry season, from <strong>April to November</strong>. During this period, weather conditions are generally favorable, trails are safer, and the sunrise views from the summit are spectacular.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do I Need a Permit to Trek Mount Rinjani?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, all trekkers require an official permit to enter Gunung Rinjani National Park. But don’t worry about the logistics—<strong>we’ve got it covered!</strong> Our tour packages include all permit arrangements and entrance fees, so you can focus 100% on the adventure.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is Accommodation Included the Night Before the Trek?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>In our standard basic packages, pre-trek accommodation is <strong>not included</strong>. We keep costs competitive as many guests prefer to book their own stay or arrive in Senaru on the trek day. However, for our <strong>VIP Packages</strong>, we can arrange luxury accommodation upon request.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is Your Average Group Size?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our group size varies depending on the tour package. On average, you’ll be trekking with a small, intimate group of <strong>4-6 people</strong>. We require a minimum of 2 people to run a trek, ensuring a personalized, safe, and social experience for all hikers.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is the Difference: Sembalun vs Senaru Route (2D1N)?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Here is the breakdown to help you choose:</p>
+                        <br>
+                        <p><strong>📍 Sembalun Route (Best for Summit):</strong><br>
+                        Ideal for summit enthusiasts! This trek takes you closest to Peak Rinjani (3726m), traversing open savanna terrain from the start to the Sembalun Crater Rim. The panoramic views are breathtaking.</p>
+                        <br>
+                        <p><strong>📍 Senaru Route (Best for Scenery):</strong><br>
+                        Ideal for those who love lush nature! This trek takes you through tropical rainforests, offering stunning views of the Segara Anak Lake from the Senaru Crater Rim. The tranquil atmosphere and shade make for a refreshing experience.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is Trekking Mount Rinjani Suitable for Beginners?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, Mount Rinjani is accessible to beginners, provided you have a <strong>good level of fitness</strong>. We offer various routes, including the <em>2D1N Senaru Crater Rim trek</em>, which avoids the difficult summit climb—perfect for beginners and families looking for a rewarding experience without extreme exhaustion.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What Kind of Food is Provided During the Trek?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We understand the importance of good food! Our porters are excellent bush-chefs. We serve <strong>freshly cooked meals</strong> 3 times a day, including Indonesian fried rice, noodle soup, chicken curry, fresh fruits, and plenty of hot ginger tea/coffee to keep you warm.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Are There Toilet Facilities on the Mountain?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>On the mountain, facilities are basic. However, Rinjani Nature provides a private <strong>toilet tent</strong> for our group at each camping area to ensure privacy and hygiene. We strictly follow hygiene protocols to keep the mountain clean.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Ready to start your adventure? Get in touch.</p>
+                <div class="line"></div>
+            </div>
+            <div class="contact-wrapper">
+                
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Location</h4>
+                        <p>Sembalun, Lombok Timur, NTB, Indonesia</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email</h4>
+                        <p>info.rinjaninature@gmail.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <h4>WhatsApp</h4>
+                        <p>+62 878 2012 8581</p>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <select>
+                            <option>Select Package</option>
+                            <option>Summit 3D2N</option>
+                            <option>Summit 2D1N</option>
+                            <option>Crater Rim</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="5" placeholder="Message / Special Request" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INFO & GALLERY SECTION -->
+    <section id="info-section" class="gallery section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Information & Gallery</h2>
+                <p>Explore our ecosystem, tracking highlights, and licensed operational details.</p>
+                <div class="line"></div>
+            </div>
+            
+            <div class="gallery-grid">
+                <img src="images/hiker.jpg" alt="Rinjani View">
+                <img src="images/top-rinjani.jpg" alt="Camping">
+                <img src="images/propok.jpg" alt="Trekking">
+                <img src="images/trekking.jpg" alt="Sunrise">
+                <img src="images/rinjani-view.jpg" alt="Lake">
+                <img src="images/segara.jpg" alt="Hiker">
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-dark">
+        <div class="container">
+            <div class="footer-grid">
+                
+                <div class="footer-col brand-col">
+                    <img src="#" alt="RINJANI NATURE" class="footer-logo">
+                    <p class="trademark">merek dagang terdaftar</p>
+                    
+                    <div class="verified-section">
+                        <p class="verified-text">Verified Member of</p>
+                        <div class="verified-badges">
+                            <img src="#" alt="PIJAR Association" class="pijar-logo">
+                        </div>
+                        <p class="association-name">
+                           jojor liit<br>
+                           sosiation sang berbagi
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="footer-col contact-col">
+                    <h3>Kantor Pusat</h3>
+                    <p>jn.pariwisata ancak senaru bayan<br>Jalan Pariwisata Senaru, Lombok Utara 83354</p>
+                    
+                    <ul class="contact-list">
+                        <li><i class="fa fa-envelope"></i> info.rinjaninature@gmail.com</li>
+                        <li><i class="fab fa-whatsapp"></i> 6287820128581</li>
+                    </ul>
+    
+                    <div class="legal-info">
+                        <p><span>Badan Hukum</span> : RINJANI NATURE</p>
+                        <p><span>NIB</span> : 727297927428</p>
+                        <p><span>Izin</span> : 7328228979289</p>
+                    </div>
+    
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+    
+                <div class="footer-col rep-col">
+                    <h3>RINJANI NATURE</h3>
+                    <ul class="contact-list">
+                        <li><i class="fa fa-phone"></i> +6287820128581</li>
+                        <li><i class="fab fa-weixin"></i> amat printer</li>
+                        <li><i class="fa fa-globe"></i> <a href="#">rinjaninature.com</a></li>
+                    </ul>
+    
+                    <div class="payment-section">
+                        <h3>Payment Methods:</h3>
+                        <div class="payment-icons">
+                            <img src="visa.png" alt="Visa">
+                            <img src="mastercard.png" alt="Mastercard">
+                            <img src="paypal.png" alt="Paypal">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="footer-col links-col">
+                    <h3>Halaman Tambahan</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">Asuransi</a></li>
+                        <li><a href="blog/blog-list.html">Blog</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#">Ketentuan Pelayanan</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                        <li><a href="#">Perkiraan Cuaca</a></li>
+                    </ul>
+                </div>
+    
+            </div>
+        </div>
+        
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <a href="https://wa.me/6287820128581?text=Halo%20Rinjani%20Nature,%20saya%20ingin%20bertanya%20tentang%20paket%20trekking." class="float-wa" target="_blank">
+        <i class="fab fa-whatsapp my-float"></i>
+    </a>
+
+    <!-- 1. SCRIPT FAQ ACCORDION -->
+    <script>
+    const faqQuestions = document.querySelectorAll(".faq-question");
+
+    faqQuestions.forEach((question) => {
+        question.addEventListener("click", () => {
+            const item = question.parentElement;
+            const answer = item.querySelector(".faq-answer");
+            const icon = question.querySelector(".faq-icon");
+            const isActive = item.classList.contains("active");
+
+            document.querySelectorAll(".faq-item").forEach((otherItem) => {
+                otherItem.classList.remove("active");
+                otherItem.querySelector(".faq-answer").style.maxHeight = null;
+                const otherIcon = otherItem.querySelector(".faq-icon");
+                if(otherIcon) {
+                    otherIcon.textContent = "+";
+                    otherIcon.style.transform = "rotate(0deg)";
+                }
+            });
+
+            if (!isActive) {
+                item.classList.add("active");
+                answer.style.maxHeight = answer.scrollHeight + "px"; 
+                if(icon) {
+                    icon.textContent = "−";
+                    icon.style.transform = "rotate(180deg)";
+                }
+            } 
+        });
+    });
+    </script>
+
+    <!-- 2. SCRIPT GOOGLE ANALYTICS EVENT TRACKING -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+        // --- TRACKING KLIK WHATSAPP ---
+        const waButtons = document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"]');
+        waButtons.forEach(btn => {
+            btn.addEventListener("click", function() {
+                gtag('event', 'click_whatsapp', {
+                    'event_category': 'Contact',
+                    'event_label': 'WhatsApp Chat Initiated',
+                    'transport_type': 'beacon'
+                });
+            });
+        });
+
+        // --- TRACKING SELEKSI PAKET TREKKING ---
+        const packageButtons = document.querySelectorAll('.package-card .btn');
+        packageButtons.forEach(btn => {
+            btn.addEventListener("click", function() {
+                const card = this.closest('.package-card');
+                const packageName = card.querySelector('h3').innerText;
+
+                gtag('event', 'select_content', {
+                    'content_type': 'Trekking Package',
+                    'item_id': packageName.replace(/\s+/g, '_').toLowerCase(),
+                    'item_name': packageName
+                });
+            });
+        });
+
+        // --- TRACKING FORM SUBMISSION ---
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            contactForm.addEventListener("submit", function(e) {
+                const selectedPackage = this.querySelector('select').value;
+                gtag('event', 'generate_lead', {
+                    'event_category': 'Form',
+                    'event_label': 'Contact Form Submission',
+                    'value': 1,
+                    'package_interest': selectedPackage
+                });
+            });
+        }
+
+        // --- TRACKING KLIK SOSIAL MEDIA ---
+        const socialLinks = document.querySelectorAll('.top-socials a, .social-icons a');
+        socialLinks.forEach(link => {
+            link.addEventListener("click", function() {
+                const iconElement = this.querySelector('i');
+                if(!iconElement) return;
+                
+                const iconClass = iconElement.className;
+                let socialName = "Unknown";
+                
+                if(iconClass.includes('facebook')) socialName = "Facebook";
+                else if(iconClass.includes('instagram')) socialName = "Instagram";
+                else if(iconClass.includes('youtube')) socialName = "YouTube";
+                else if(iconClass.includes('tiktok')) socialName = "TikTok";
+                else if(iconClass.includes('twitter')) socialName = "Twitter";
+
+                gtag('event', 'social_click', {
+                    'event_category': 'Social Media',
+                    'event_label': socialName,
+                    'transport_type': 'beacon'
+                });
+            });
+        });
+
+        // --- TRACKING INTERAKSI FAQ ---
+        const faqButtons = document.querySelectorAll('.faq-question');
+        faqButtons.forEach(btn => {
+            btn.addEventListener("click", function() {
+                const parent = this.parentElement;
+                if (!parent.classList.contains('active')) { 
+                    const questionText = this.innerText.replace('+', '').replace('−', '').trim();
+                    gtag('event', 'faq_expand', {
+                        'event_category': 'Engagement',
+                        'event_label': questionText
+                    });
+                }
+            });
+        });
+
+        // --- TRACKING INTERNAL NAVIGASI LINK ---
+        const navLinks = document.querySelectorAll('a[href$=".html"]');
+        navLinks.forEach(link => {
+            link.addEventListener("click", function() {
+                const url = this.getAttribute('href');
+                if(url.substring(0,1) !== '#') {
+                    gtag('event', 'internal_link_click', {
+                        'event_category': 'Navigation',
+                        'event_label': url
+                    });
+                }
+            });
+        });
+
+    });
+    </script>
+     
+</body>
+</html>

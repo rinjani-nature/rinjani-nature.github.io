@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Mencegah Google mengindex folder admin atau file sistem (jika nanti pakai WordPress/PHP)
+Disallow: /cgi-bin/
+Disallow: /private/
+
+# Peta situs ada di sini (Ganti domain dengan nama domain asli Anda)
+Sitemap: https://www.rinjanitrekkingpro.com/sitemap.xml
