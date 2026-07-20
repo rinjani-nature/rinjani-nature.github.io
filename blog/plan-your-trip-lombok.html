@@ -23,9 +23,7 @@
         }
 
         .page-hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1545562083-c583d014b2b7?auto=format&fit=crop&w=1600&q=80');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/Trip-Lombok.jpg') center/cover no-repeat;
             height: 50vh;
             display: flex;
             align-items: center;
@@ -35,8 +33,8 @@
             margin-top: 0; 
         }
         
-        .page-hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 1rem; }
-        .page-hero p { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; }
+        .page-hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 1rem; color: #fff; }
+        .page-hero p { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: #fff; }
 
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
         
@@ -47,7 +45,7 @@
 
         .logistics-box { background: #fff; border: 1px solid #eee; padding: 30px; border-radius: 10px; display: flex; flex-wrap: wrap; gap: 30px; align-items: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .logistics-img { flex: 1; min-width: 250px; }
-        .logistics-img img { width: 100%; border-radius: 8px; object-fit: cover; }
+        .logistics-img img { width: 100%; height: auto; border-radius: 8px; object-fit: cover; }
         .logistics-content { flex: 2; min-width: 300px; }
         
         .tips-list { list-style: none; padding: 0; margin-top: 15px; }
@@ -69,10 +67,10 @@
     <div class="top-header">
         <div class="container">
             <div class="top-socials">
-                    <a href="https://www.facebook.com/share/1CvHGH2sDf/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://youtube.com/@channelku77?si=j6bjl2JyQpG0AMhy" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a href="www.tiktok.com/@rinjani_nature" target="_blank"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/share/1CvHGH2sDf/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://youtube.com/@channelku77?si=j6bjl2JyQpG0AMhy" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@rinjani_nature" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </div>
@@ -139,7 +137,8 @@
 
             <div class="logistics-box">
                 <div class="logistics-img">
-                    <img src="../images/Trip-Lombok.jpg" alt="Trip-lombok" class="nav-logo-img">
+                    <!-- Class diganti agar gambar terukur sempurna di area logistik -->
+                    <img src="../images/Trip-Lombok.jpg" alt="Trip to Lombok">
                 </div>
                 <div class="logistics-content">
                     <h3>✈️ Flights from Amsterdam (AMS)</h3>
@@ -214,8 +213,8 @@
                     </div>
 
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/1CvHGH2sDf/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
 
@@ -242,7 +241,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/6287820128581?text=Hello%20Rinjani%20Nature,%20I%20want%20to%20plan%20my%20trip!" class="float-wa" target="_blank" style="position:fixed; width:60px; height:60px; bottom:40px; right:40px; background-color:#25d366; color:#FFF; border-radius:50px; text-align:center; font-size:30px; box-shadow: 2px 2px 3px #999; z-index:100; display:flex; align-items:center; justify-content:center;">
+    <a href="https://wa.me/6287820128581?text=Hello%20Rinjani%20Nature,%20I%20want%20to%20plan%20my%20trip!" class="float-wa" target="_blank">
         <i class="fab fa-whatsapp my-float"></i>
     </a>
 
@@ -250,9 +249,11 @@
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
 
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+        if(hamburger) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
     </script>
 
 </body>
