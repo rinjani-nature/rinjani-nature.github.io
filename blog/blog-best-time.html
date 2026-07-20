@@ -25,7 +25,7 @@
       },
       "headline": "Best Time to Trek Mount Rinjani: The Ultimate Weather Guide",
       "description": "Detailed analysis of the best months to climb Mount Rinjani, covering weather patterns and crowd avoidance.",
-      "image": "https://images.unsplash.com/photo-1545562083-c583d014b2b7?auto=format&fit=crop&w=1200&q=80",  
+      "image": "https://rinjaninature.com/images/Best-Time-to-Trek-Mount-Rinjani.jpg",  
       "author": {
         "@type": "Organization",
         "name": "Rinjani Nature Team"
@@ -34,16 +34,61 @@
       "dateModified": "2026-02-05"
     }
     </script>
+
+    <style>
+        /* Mengatur Gambar Hero Header khusus halaman ini */
+        .blog-header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/Best-Time-to-Trek-Mount-Rinjani.jpg') center/cover no-repeat;
+            padding: 100px 0;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .blog-header h1 {
+            color: #ffffff;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+
+        .blog-header .category {
+            background-color: var(--primary-color, #e67e22);
+            color: white;
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            border-radius: 3px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        /* Memastikan gambar di dalam artikel tampil penuh dan tidak kerdil */
+        .content-img {
+            width: 100%;
+            height: auto;
+            max-height: 450px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 25px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <div class="top-header">
         <div class="container">
             <div class="top-socials">
-                    <a href="https://www.facebook.com/share/1CvHGH2sDf/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://youtube.com/@channelku77?si=j6bjl2JyQpG0AMhy" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a href="www.tiktok.com/@rinjani_nature" target="_blank"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/share/1CvHGH2sDf/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://youtube.com/@channelku77?si=j6bjl2JyQpG0AMhy" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@rinjani_nature" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </div>
@@ -67,6 +112,7 @@
         </div>
     </nav>
 
+    <!-- HERO HEADER DENGAN BACKGROUND GAMBAR -->
     <header class="blog-header">
         <div class="container">
             <span class="category">Weather & Season</span>
@@ -88,7 +134,8 @@
                 In short: The trekking season runs from <strong>April to December</strong>. But when exactly is the "perfect" time? Let's break it down.
             </p>
 
-            <img src="../images/Best-Time-to-Trek-Mount-Rinjani.jpg" alt="Best-Time-to-Trek-Mount-Rinjani" class="nav-logo-img">
+            <!-- GAMBAR DI DALAM ARTIKEL (Menggunakan class content-img agar ukurannya pas) -->
+            <img src="../images/Best-Time-to-Trek-Mount-Rinjani.jpg" alt="Best Time to Trek Mount Rinjani" class="content-img">
 
             <h2>1. Official Opening Dates</h2>
             <p>
@@ -211,9 +258,9 @@
         <div class="container footer-content">
             <p>&copy; 2026 Rinjani Nature. All Rights Reserved.</p>
             <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                <a href="https://www.facebook.com/share/1CvHGH2sDf/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-tripadvisor"></i></a>
             </div>
         </div>
     </footer>
@@ -222,5 +269,15 @@
         <i class="fab fa-whatsapp my-float"></i>
     </a>
 
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        if(hamburger) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+    </script>
 </body>
 </html>
