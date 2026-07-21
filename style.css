@@ -292,7 +292,11 @@ ul {
 .nav-logo-img {
     height: 55px;          /* Atur tinggi logo (sesuaikan angka ini) */
     width: auto;           /* Lebar menyesuaikan proporsi */
+    display: block;
     object-fit: contain;   /* Agar gambar tidak gepeng */
+}
+.navbar {
+    padding: 10px 0; 
 }
 
 /* =========================================
