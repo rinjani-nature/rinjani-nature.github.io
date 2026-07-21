@@ -289,14 +289,27 @@ ul {
     text-decoration: none;  /* Menghilangkan garis bawah link */
 }
 
-.nav-logo-img {
-    height: 80px;          /* Atur tinggi logo (sesuaikan angka ini) */
-    width: auto;           /* Lebar menyesuaikan proporsi */
-    display: block;
-    object-fit: contain;   /* Agar gambar tidak gepeng */
-}
+/* 1. Kunci tinggi navbar agar tidak ikut membengkak */
 .navbar {
-    padding: 10px 0; 
+    height: 70px;            /* Atur tinggi tetap untuk navbar */
+    display: flex;
+    align-items: center;
+    padding: 0 20px;          /* Hilangkan padding atas-bawah berlebih */
+}
+
+/* 2. Pastikan wrapper logo mengikuti tinggi navbar */
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* 3. Paksa gambar logo membesar memenuhi area navbar */
+.nav-logo-img {
+    height: 100% !important;   /* Memaksa tinggi gambar mengikuti navbar */
+    max-height: 55px;         /* Ubah angka ini (misal 55px - 65px) untuk mengatur besar logo */
+    width: auto !important;   /* Agar gambar tidak gepeng */
+    object-fit: contain;
 }
 
 /* =========================================
