@@ -835,8 +835,9 @@ input:focus, select:focus, textarea:focus {
 }
 
 /* =========================================
-   11. RESPONSIVE (MOBILE & TABLET)
+   11. RESPONSIVE (MOBILE & TABLET FIXES)
    ========================================= */
+
 @media (max-width: 900px) {
     .footer-grid {
         grid-template-columns: 1fr 1fr;
@@ -844,36 +845,96 @@ input:focus, select:focus, textarea:focus {
 }
 
 @media (max-width: 768px) {
+    /* FIX 1: Jarak Logo & Teks lebih rapat di HP */
+    .logo {
+        gap: 6px !important;
+    }
+
+    .nav-logo-img {
+        max-height: 40px !important;
+    }
+
     .navbar .logo-text {
-        font-size: 1.1rem;
+        font-size: 1.05rem !important;
+    }
+
+    /* FIX 2: Perbaikan Top Header Sosmed & Mencegah Badge Meluap */
+    .top-header {
+        position: relative;
+        z-index: 1001;
+        overflow: hidden;
+    }
+
+    .top-header .container {
+        justify-content: center; /* Meratakan sosmed di tengah header HP */
+    }
+
+    .top-socials {
+        gap: 15px;
+    }
+
+    .hero, .packages, .features {
+        overflow: hidden; /* Mencegah badge melayang keluar area */
+    }
+
+    /* FIX 3: Styling Hamburger Menu saat Aktif */
+    .hamburger {
+        display: block !important;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: #333;
     }
 
     .nav-links {
         display: none;
-        flex-direction: column;
+        flex-direction: column !important;
         width: 100%;
         position: absolute;
         top: 70px;
         left: 0;
-        background: var(--white);
+        background: #ffffff;
         padding: 20px;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        z-index: 999;
     }
-    
+
     .nav-links.active {
-        display: flex;
+        display: flex !important;
     }
 
     .nav-links li {
-        margin: 10px 0;
+        margin: 10px 0 !important;
+        text-align: center;
     }
 
-    .hamburger {
+    .nav-links li a {
         display: block;
+        width: 100%;
+        padding: 10px 0;
     }
 
+    /* FIX 4: Pemisahan Posisi Tombol WA dan Scroll Up di HP */
+    .float-wa {
+        width: 48px;
+        height: 48px;
+        bottom: 25px;
+        right: 20px;
+        font-size: 26px;
+        z-index: 1000;
+    }
+
+    .back-to-top {
+        bottom: 85px !important; /* Menaikkan tombol scroll di atas ikon WA */
+        right: 23px !important;
+        width: 42px;
+        height: 42px;
+        line-height: 42px;
+        z-index: 999;
+    }
+
+    /* Penyesuaian Elemen Lain */
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .faq-question {
@@ -884,21 +945,13 @@ input:focus, select:focus, textarea:focus {
     .section-title {
         font-size: 1.8rem;
     }
-
-    .float-wa {
-        width: 45px;
-        height: 45px;
-        bottom: 20px;
-        right: 20px;
-        font-size: 24px;
-    }
 }
 
 @media (max-width: 600px) {
     .footer-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .footer-col {
         margin-bottom: 30px;
     }
