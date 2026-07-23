@@ -322,6 +322,25 @@
         </div>
     </section>
 
+    <section class="tripadvisor-section section-padding">
+    <div class="container">
+        <div class="section-header">
+            <h2>Recommended on TripAdvisor</h2>
+            <p>See what our adventurous guests have to say about their trekking experience.</p>
+            <div class="line"></div>
+        </div>
+        
+        <div class="ta-widget-wrapper">
+            <!-- Paste Kode Script Widget dari TripAdvisor di sini (jika ada) -->
+            
+            <!-- Tombol Link ke Profil TripAdvisor -->
+            <a href="https://www.tripadvisor.com/PROFILE_ANDA" target="_blank" class="btn-tripadvisor">
+                <i class="fab fa-tripadvisor"></i> Read Our Reviews on TripAdvisor
+            </a>
+        </div>
+    </div>
+</section>
+
     
 
     <!-- =========================================
@@ -670,6 +689,31 @@
 
     });
     </script>
+
+    // --- TRACKING KLIK SOSIAL MEDIA ---
+const socialLinks = document.querySelectorAll('.top-socials a, .social-icons a');
+socialLinks.forEach(link => {
+    link.addEventListener("click", function() {
+        const iconElement = this.querySelector('i');
+        if(!iconElement) return;
+        
+        const iconClass = iconElement.className;
+        let socialName = "Unknown";
+        
+        if(iconClass.includes('facebook')) socialName = "Facebook";
+        else if(iconClass.includes('instagram')) socialName = "Instagram";
+        else if(iconClass.includes('youtube')) socialName = "YouTube";
+        else if(iconClass.includes('tiktok')) socialName = "TikTok";
+        else if(iconClass.includes('twitter')) socialName = "Twitter";
+        else if(iconClass.includes('tripadvisor')) socialName = "TripAdvisor"; // Tambahan tracking TripAdvisor
+
+        gtag('event', 'social_click', {
+            'event_category': 'Social Media',
+            'event_label': socialName,
+            'transport_type': 'beacon'
+        });
+    });
+});
      
 </body>
 </html>
