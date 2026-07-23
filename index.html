@@ -675,6 +675,29 @@
 
     });
     </script>
+
+    <!-- SCRIPT HAMBURGER MENU MOBILE -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        if (hamburger && navLinks) {
+            hamburger.addEventListener("click", function() {
+                navLinks.classList.toggle("active");
+            });
+
+            // Tutup menu otomatis saat salah satu link diklik
+            document.querySelectorAll(".nav-links a").forEach(link => {
+                link.addEventListener("click", () => {
+                    navLinks.classList.remove("active");
+                });
+            });
+        }
+    });
+    </script>
+</body>
+</html>
      
 </body>
 </html>
