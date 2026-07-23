@@ -123,7 +123,7 @@ ul {
 }
 
 /* =========================================
-   3. TOP HEADER & NAVBAR
+   3. TOP HEADER & NAVBAR (DIBERESKAN)
    ========================================= */
 .top-header {
     background-color: var(--dark-bg);
@@ -206,17 +206,18 @@ ul {
     color: #2e7d32; /* Hijau Daun Alami */
 }
 
-/* --- NAV LINKS (DARI KANAN KE KIRI) --- */
+/* --- NAV LINKS (DENGAN TATA LETAK SISI KANAN PRESISI) --- */
 .nav-links {
     display: flex;
-    flex-direction: row-reverse; /* KUNCI: Membalik urutan menu dari Kanan ke Kiri */
+    flex-direction: row;     /* Urutan normal: Home -> Contact Us */
+    align-items: center;
     list-style: none;
-    margin-left: auto;          /* KUNCI: Mendorong seluruh grup menu mentok ke Kanan */
+    margin-left: auto;       /* Mendorong seluruh grup menu ke KANAN */
+    gap: 8px;                /* Jarak konsisten antar menu */
 }
 
 .nav-links li {
-    margin-left: 0;
-    margin-right: 15px;         /* Mengubah jarak antar menu ke sebelah kanan */
+    margin: 0;               /* Reset margin bawaan */
 }
 
 .nav-links li a {
@@ -225,9 +226,10 @@ ul {
     font-weight: 600;
     text-transform: uppercase;
     font-size: 0.9rem;
-    padding: 8px 15px;
+    padding: 8px 14px;
     border-radius: 7px;
     transition: var(--transition);
+    display: inline-block;
 }
 
 .nav-links li a:hover,
