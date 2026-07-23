@@ -835,82 +835,78 @@ input:focus, select:focus, textarea:focus {
 }
 
 /* =========================================
-   PERBAIKAN MOBILE (TAMPILAN HP)
+   PERBAIKAN KHUSUS KHUSUS LAYAR HP (MOBILE)
    ========================================= */
 
-@media (max-width: 768px) {
+/* 1. Mencegah SEMUA Badge Meluap Keluar dari Card/Gambar */
+.package-card, 
+.blog-card,
+.card-image,
+.blog-img {
+    position: relative !important;
+    overflow: hidden !important;
+}
 
-    /* 1. SOSIAL MEDIA HEADER DI SEBELAH KIRI */
+@media (max-width: 768px) {
+    /* 2. Kunci Top Header agar Bersih & Mengunci Posisi */
     .top-header {
         position: relative;
         z-index: 1002;
         background-color: var(--dark-bg);
-        padding: 8px 0;
+        padding: 10px 0;
     }
 
     .top-header .container {
         display: flex;
-        justify-content: flex-start !important; /* KUNCI: Memaksa ke KIRI */
+        justify-content: center !important; /* Rata tengah di HP */
         align-items: center;
-        padding-left: 20px;
     }
 
     .top-socials {
         display: flex;
         gap: 15px;
+        z-index: 1003;
     }
 
-    /* 2. TOMBOL WHATSAPP (DI ATAS) */
+    .top-socials a {
+        font-size: 1rem;
+    }
+
+    /* 3. Mencegah Seluruh Section Meluap Ke Atas */
+    .hero, .features, .packages, .blog-section {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* 4. POSISI TOMBOL WHATSAPP & BACK TO TOP (TIDAK BERTUMPUK) */
+    
+    /* Tombol Floating WhatsApp (Paling Bawah) */
     .float-wa {
         position: fixed !important;
-        bottom: 85px !important;       /* KUNCI: Dinaikkan ke atas */
+        bottom: 20px !important;    /* Posisi paling bawah kanan */
         right: 20px !important;
-        width: 48px !important;
-        height: 48px !important;
-        border-radius: 50% !important;
-        background-color: #25d366 !important;
-        color: #ffffff !important;
-        z-index: 9999 !important;
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 28px !important;
+        z-index: 9999 !important;   /* Selalu di depan */
     }
 
-    .float-wa i {
-        font-size: 26px !important;
-        margin: 0 !important;
-        transform: none !important;    /* Menghapus rotasi/miring */
-    }
-
-    /* 3. TOMBOL SCROLL BACK TO TOP (DI BAWAH) & IKON LURUS */
+    /* Tombol Back To Top (Tepat Di Atas WA) */
     .back-to-top {
         position: fixed !important;
-        bottom: 20px !important;       /* KUNCI: Dipindah ke paling BAWAH */
-        right: 20px !important;
-        width: 48px !important;
-        height: 48px !important;
-        line-height: 1 !important;     /* Reset line-height agar ikon tidak miring */
-        border-radius: 50% !important;  /* Dibuat bulat sempurna */
-        background-color: #007bff !important;
-        color: #ffffff !important;
-        z-index: 9998 !important;
-        display: flex !important;
+        bottom: 80px !important;    /* Dinaikkan 80px agar bebas dari tombol WA */
+        right: 23px !important;     /* Lurus simetris di atas WA */
+        width: 44px !important;
+        height: 44px !important;
+        line-height: 44px !important;
+        border-radius: 50% !important; /* Dibuat bulat agar serasi dengan WA */
+        z-index: 9998 !important;   /* Di bawah z-index WA sedikit */
+        display: flex;
         align-items: center;
         justify-content: center;
-        text-align: center;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
-    .back-to-top i {
-        font-size: 20px !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        transform: none !important;    /* Menghapus rotasi miring pada panah */
-        display: inline-block;
-    }
-
-    /* 4. MENYATUKAN KEMBALI RAPATNYA LOGO DI HP */
+    /* 5. Merapatkan Logo & Teks Rinjani Nature di HP */
     .logo {
         gap: 6px !important;
     }
