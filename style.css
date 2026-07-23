@@ -913,3 +913,59 @@ input:focus, select:focus, textarea:focus {
         margin-bottom: 30px;
     }
 }
+
+/* =========================================
+  12. SLIDER "WHY TREK WITH US" KHUSUS HP (MOBILE)
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* Mengubah grid menjadi flex horizontal yang bisa di-scroll/swipe */
+    .features-grid {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;          /* Mengaktifkan scroll horizontal */
+        scroll-snap-type: x mandatory;         /* Efek magnet/snap pas digeser */
+        -webkit-overflow-scrolling: touch;     /* Geseran halus di HP iOS/Android */
+        gap: 15px !important;                 /* Jarak antar kartu lebih rapat */
+        padding: 10px 5px 20px 5px !important; /* Padding ruang bawah */
+    }
+
+    /* Menyembunyikan scrollbar bawah agar tampilan bersih */
+    .features-grid::-webkit-scrollbar {
+        display: none;
+    }
+    .features-grid {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    /* Memperkecil ukuran kartu dan memposisikannya sebagai slider */
+    .feature-card {
+        flex: 0 0 80% !important;             /* Kartu memakan 80% lebar layar (menyisa sedikit ujung kartu berikutnya) */
+        max-width: 80% !important;
+        scroll-snap-align: center;             /* Kartu otomatis berhenti pas di tengah saat digeser */
+        padding: 20px 15px !important;         /* Memperkecil padding dalam kartu */
+        border-radius: 12px;
+        background: #ffffff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Memperkecil ukuran Ikon di dalam kartu */
+    .feature-card i {
+        font-size: 2rem !important;            /* Dikecilkan dari 2.5rem */
+        margin-bottom: 12px !important;
+    }
+
+    /* Memperkecil Judul Kartu */
+    .feature-card h3 {
+        font-size: 1.1rem !important;
+        margin-bottom: 8px !important;
+    }
+
+    /* Memperkecil Teks Deskripsi */
+    .feature-card p {
+        font-size: 0.85rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 0 !important;
+    }
+}
