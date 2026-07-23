@@ -1480,3 +1480,58 @@ input:focus, select:focus, textarea:focus {
     }
 }
 
+/* =========================================
+   TRIPADVISOR SECTION & BUTTON STYLES
+   ========================================= */
+
+/* Warna Ikon TripAdvisor di Header & Footer */
+.top-socials a:hover .fa-tripadvisor,
+.social-icons a:hover .fa-tripadvisor {
+    color: #00af87 !important; /* Warna hijau khas TripAdvisor */
+}
+
+/* Container Section TripAdvisor */
+.tripadvisor-section {
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.ta-widget-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Tombol Kustom TripAdvisor */
+.btn-tripadvisor {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    color: #333333;
+    border: 2px solid #00af87;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-tripadvisor i {
+    color: #00af87;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.btn-tripadvisor:hover {
+    background-color: #00af87;
+    color: #ffffff;
+}
+
+.btn-tripadvisor:hover i {
+    color: #ffffff;
+}
+
