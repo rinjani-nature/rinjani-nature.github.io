@@ -913,24 +913,32 @@ input:focus, select:focus, textarea:focus {
         padding: 10px 0;
     }
 
-    /* FIX 4: Pemisahan Posisi Tombol WA dan Scroll Up di HP */
+  /* 1. Tombol WhatsApp (Paling Bawah) */
     .float-wa {
-        width: 48px;
-        height: 48px;
-        bottom: 25px;
-        right: 20px;
-        font-size: 26px;
-        z-index: 1000;
+        position: fixed !important;
+        bottom: 20px !important;       /* Posisi dari dasar layar HP */
+        right: 20px !important;        /* Posisi dari kanan layar */
+        width: 50px !important;
+        height: 50px !important;
+        border-radius: 50% !important;
+        z-index: 9999 !important;      /* Tumpukan di atas */
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
     }
 
+    /* 2. Tombol Scroll Up (Di Atas WA dengan Jarak Aman) */
     .back-to-top {
-        bottom: 95px !important; /* Menaikkan tombol scroll di atas ikon WA */
-        right: 23px !important;
-        width: 42px;
-        height: 42px;
-        line-height: 42px;
-        z-index: 999;
-    }
+        position: fixed !important;
+        bottom: 85px !important;       /* KUNCI: Naik 65px di atas tombol WA */
+        right: 23px !important;        /* Posisi sejajar di atas WA */
+        width: 44px !important;
+        height: 44px !important;
+        line-height: 44px !important;
+        border-radius: 50% !important;  /* Dibuat bulat agar serasi */
+        z-index: 9998 !important;      /* Di bawah WA sedikit */
+        display: flex !important;      /* KUNCI: Memaksa koordinat bottom berfungsi */
+        align-items: center;
 
     /* Penyesuaian Elemen Lain */
     .hero h1 {
