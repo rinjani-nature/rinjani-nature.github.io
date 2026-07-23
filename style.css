@@ -123,7 +123,7 @@ ul {
 }
 
 /* =========================================
-   3. TOP HEADER & NAVBAR (DIBERESKAN)
+   3. TOP HEADER & NAVBAR (DESKTOP)
    ========================================= */
 .top-header {
     background-color: var(--dark-bg);
@@ -135,7 +135,7 @@ ul {
 
 .top-header .container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -164,7 +164,6 @@ ul {
     height: 70px;
     display: flex;
     align-items: center;
-    margin-top: 0;
 }
 
 .nav-container {
@@ -174,7 +173,6 @@ ul {
     width: 100%;
 }
 
-/* --- LOGO STYLING (BRAND DUO-TONE) --- */
 .logo {
     display: flex;
     align-items: center;
@@ -199,25 +197,24 @@ ul {
 }
 
 .brand-rinjani {
-    color: #1a1a1a; /* Hitam */
+    color: #1a1a1a;
 }
 
 .brand-nature {
-    color: #2e7d32; /* Hijau Daun Alami */
+    color: #2e7d32;
 }
 
-/* --- NAV LINKS (DENGAN TATA LETAK SISI KANAN PRESISI) --- */
 .nav-links {
     display: flex;
-    flex-direction: row;     /* Urutan normal: Home -> Contact Us */
+    flex-direction: row;
     align-items: center;
     list-style: none;
-    margin-left: auto;       /* Mendorong seluruh grup menu ke KANAN */
-    gap: 8px;                /* Jarak konsisten antar menu */
+    margin-left: auto;
+    gap: 8px;
 }
 
 .nav-links li {
-    margin: 0;               /* Reset margin bawaan */
+    margin: 0;
 }
 
 .nav-links li a {
@@ -238,6 +235,13 @@ ul {
     color: #0a0a0a;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
 /* =========================================
    4. HERO SECTION
    ========================================= */
@@ -250,6 +254,7 @@ ul {
     justify-content: center;
     text-align: center;
     color: var(--white);
+    overflow: hidden;
 }
 
 .hero-overlay {
@@ -317,10 +322,12 @@ ul {
     gap: 30px;
 }
 
-.package-card {
+.package-card, 
+.blog-card {
     background: var(--white);
     border-radius: 8px;
-    overflow: hidden;
+    overflow: hidden !important;
+    position: relative !important;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     transition: var(--transition);
 }
@@ -329,11 +336,13 @@ ul {
     transform: translateY(-10px);
 }
 
-.card-image {
+.card-image,
+.blog-img {
     height: 200px;
     background-size: cover;
     background-position: center;
-    position: relative;
+    position: relative !important;
+    overflow: hidden !important;
 }
 
 .badge {
@@ -346,6 +355,7 @@ ul {
     font-size: 0.8rem;
     border-radius: 20px;
     font-weight: 600;
+    z-index: 2;
 }
 
 .card-body {
@@ -379,7 +389,7 @@ ul {
 }
 
 /* =========================================
-   6. FAQ SECTION (ACCORDION)
+   6. FAQ SECTION
    ========================================= */
 .faq-section {
     padding: 80px 0;
@@ -564,19 +574,6 @@ ul {
     gap: 30px;
 }
 
-.blog-card {
-    background: var(--white);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.blog-img {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-}
-
 .blog-content {
     padding: 20px;
 }
@@ -646,7 +643,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 /* =========================================
-   10. FOOTER & FLOATING WA
+   10. FOOTER
    ========================================= */
 .footer-dark {
     background-color: #1a1a1a;
@@ -789,124 +786,81 @@ input:focus, select:focus, textarea:focus {
     padding-left: 5px;
 }
 
-.back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #007bff;
-    color: #fff;
-    width: 35px;
-    height: 35px;
-    text-align: center;
-    line-height: 35px;
-    border-radius: 4px;
-    font-size: 18px;
-    z-index: 999;
-    transition: 0.3s;
-}
+/* =========================================
+   11. FLOATING BUTTONS (GLOBAL DESKTOP & MOBILE)
+   ========================================= */
 
-.back-to-top:hover {
-    background-color: #0056b3;
-}
-
+/* Tombol WA (Hijau) - POSISI ATAS */
 .float-wa {
-    position: fixed;
-    width: 50px;
-    height: 50px;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25d366;
-    color: #FFF;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 28px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-    z-index: 1000;
-    display: flex;
+    position: fixed !important;
+    bottom: 85px !important;       /* Terletak di Atas */
+    right: 20px !important;
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 50% !important;
+    background-color: #25d366 !important;
+    color: #ffffff !important;
+    z-index: 9999 !important;
+    display: flex !important;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-.float-wa:hover {
-    background-color: #128C7E;
-    transform: scale(1.1);
-    box-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+.float-wa i {
+    font-size: 26px !important;
+    margin: 0 !important;
+    transform: none !important;
+}
+
+/* Tombol Scroll Up (Biru) - POSISI BAWAH */
+.back-to-top {
+    position: fixed !important;
+    bottom: 20px !important;       /* Terletak di Paling Bawah */
+    right: 20px !important;
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 50% !important;
+    background-color: #007bff !important;
+    color: #ffffff !important;
+    z-index: 9998 !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.back-to-top i {
+    font-size: 20px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
 }
 
 /* =========================================
-   PERBAIKAN KHUSUS KHUSUS LAYAR HP (MOBILE)
+   12. RESPONSIVE MOBILE (HP)
    ========================================= */
-
-/* 1. Mencegah SEMUA Badge Meluap Keluar dari Card/Gambar */
-.package-card, 
-.blog-card,
-.card-image,
-.blog-img {
-    position: relative !important;
-    overflow: hidden !important;
+@media (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media (max-width: 768px) {
-    /* 2. Kunci Top Header agar Bersih & Mengunci Posisi */
-    .top-header {
-        position: relative;
-        z-index: 1002;
-        background-color: var(--dark-bg);
-        padding: 10px 0;
-    }
-
+    /* SOSMED HEADER DI KIRI MENTOK */
     .top-header .container {
         display: flex;
-        justify-content: center !important; /* Rata tengah di HP */
+        justify-content: flex-start !important;
         align-items: center;
+        padding-left: 20px;
     }
 
     .top-socials {
         display: flex;
         gap: 15px;
-        z-index: 1003;
     }
 
-    .top-socials a {
-        font-size: 1rem;
-    }
-
-    /* 3. Mencegah Seluruh Section Meluap Ke Atas */
-    .hero, .features, .packages, .blog-section {
-        position: relative;
-        z-index: 1;
-    }
-
-    /* 4. POSISI TOMBOL WHATSAPP & BACK TO TOP (TIDAK BERTUMPUK) */
-    
-    /* Tombol Floating WhatsApp (Paling Bawah) */
-    .float-wa {
-        position: fixed !important;
-        bottom: 20px !important;    /* Posisi paling bawah kanan */
-        right: 20px !important;
-        width: 50px !important;
-        height: 50px !important;
-        font-size: 28px !important;
-        z-index: 9999 !important;   /* Selalu di depan */
-    }
-
-    /* Tombol Back To Top (Tepat Di Atas WA) */
-    .back-to-top {
-        position: fixed !important;
-        bottom: 80px !important;    /* Dinaikkan 80px agar bebas dari tombol WA */
-        right: 23px !important;     /* Lurus simetris di atas WA */
-        width: 44px !important;
-        height: 44px !important;
-        line-height: 44px !important;
-        border-radius: 50% !important; /* Dibuat bulat agar serasi dengan WA */
-        z-index: 9998 !important;   /* Di bawah z-index WA sedikit */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    /* 5. Merapatkan Logo & Teks Rinjani Nature di HP */
+    /* LOGO RAPAT DI HP */
     .logo {
         gap: 6px !important;
     }
@@ -917,5 +871,45 @@ input:focus, select:focus, textarea:focus {
 
     .navbar .logo-text {
         font-size: 1.05rem !important;
+    }
+
+    /* MENU HAMBURGER MOBILE */
+    .hamburger {
+        display: block !important;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column !important;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: var(--white);
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex !important;
+    }
+
+    .nav-links li {
+        margin: 10px 0 !important;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-col {
+        margin-bottom: 30px;
     }
 }
