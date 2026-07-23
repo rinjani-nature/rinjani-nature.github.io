@@ -916,7 +916,7 @@ input:focus, select:focus, textarea:focus {
     /* FIX 4: Pemisahan Posisi Tombol WA dan Scroll Up di HP */
     .float-wa {
         width: 48px;
-        height: 78px;
+        height: 48px;
         bottom: 25px;
         right: 20px;
         font-size: 26px;
@@ -924,7 +924,7 @@ input:focus, select:focus, textarea:focus {
     }
 
     .back-to-top {
-        bottom: 85px !important; /* Menaikkan tombol scroll di atas ikon WA */
+        bottom: 95px !important; /* Menaikkan tombol scroll di atas ikon WA */
         right: 23px !important;
         width: 42px;
         height: 42px;
