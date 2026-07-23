@@ -835,78 +835,17 @@ input:focus, select:focus, textarea:focus {
 }
 
 /* =========================================
-  11. PERBAIKAN KHUSUS KHUSUS LAYAR HP (MOBILE)
+   11. RESPONSIVE (MOBILE & TABLET FIXES)
    ========================================= */
 
-/* 1. Mencegah SEMUA Badge Meluap Keluar dari Card/Gambar */
-.package-card, 
-.blog-card,
-.card-image,
-.blog-img {
-    position: relative !important;
-    overflow: hidden !important;
+@media (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media (max-width: 768px) {
-    /* 2. Kunci Top Header agar Bersih & Mengunci Posisi */
-    .top-header {
-        position: relative;
-        z-index: 1002;
-        background-color: var(--dark-bg);
-        padding: 10px 0;
-    }
-
-    .top-header .container {
-        display: flex;
-        justify-content: center !important; /* Rata tengah di HP */
-        align-items: center;
-    }
-
-    .top-socials {
-        display: flex;
-        gap: 15px;
-        z-index: 1003;
-    }
-
-    .top-socials a {
-        font-size: 1rem;
-    }
-
-    /* 3. Mencegah Seluruh Section Meluap Ke Atas */
-    .hero, .features, .packages, .blog-section {
-        position: relative;
-        z-index: 1;
-    }
-
-    /* 4. POSISI TOMBOL WHATSAPP & BACK TO TOP (TIDAK BERTUMPUK) */
-    
-    /* Tombol Floating WhatsApp (Paling Bawah) */
-    .float-wa {
-        position: fixed !important;
-        bottom: 20px !important;    /* Posisi paling bawah kanan */
-        right: 20px !important;
-        width: 50px !important;
-        height: 50px !important;
-        font-size: 28px !important;
-        z-index: 9999 !important;   /* Selalu di depan */
-    }
-
-    /* Tombol Back To Top (Tepat Di Atas WA) */
-    .back-to-top {
-        position: fixed !important;
-        bottom: 80px !important;    /* Dinaikkan 80px agar bebas dari tombol WA */
-        right: 23px !important;     /* Lurus simetris di atas WA */
-        width: 44px !important;
-        height: 44px !important;
-        line-height: 44px !important;
-        border-radius: 50% !important; /* Dibuat bulat agar serasi dengan WA */
-        z-index: 9998 !important;   /* Di bawah z-index WA sedikit */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    /* 5. Merapatkan Logo & Teks Rinjani Nature di HP */
+    /* FIX 1: Jarak Logo & Teks lebih rapat di HP */
     .logo {
         gap: 6px !important;
     }
@@ -917,5 +856,103 @@ input:focus, select:focus, textarea:focus {
 
     .navbar .logo-text {
         font-size: 1.05rem !important;
+    }
+
+    /* FIX 2: Perbaikan Top Header Sosmed & Mencegah Badge Meluap */
+    .top-header {
+        position: relative;
+        z-index: 1001;
+        overflow: hidden;
+    }
+
+    .top-header .container {
+        justify-content: center; /* Meratakan sosmed di tengah header HP */
+    }
+
+    .top-socials {
+        gap: 15px;
+    }
+
+    .hero, .packages, .features {
+        overflow: hidden; /* Mencegah badge melayang keluar area */
+    }
+
+    /* FIX 3: Styling Hamburger Menu saat Aktif */
+    .hamburger {
+        display: block !important;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: #333;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column !important;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: #ffffff;
+        padding: 20px;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex !important;
+    }
+
+    .nav-links li {
+        margin: 10px 0 !important;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    /* FIX 4: Pemisahan Posisi Tombol WA dan Scroll Up di HP */
+    .float-wa {
+        width: 48px;
+        height: 78px;
+        bottom: 25px;
+        right: 20px;
+        font-size: 26px;
+        z-index: 1000;
+    }
+
+    .back-to-top {
+        bottom: 85px !important; /* Menaikkan tombol scroll di atas ikon WA */
+        right: 23px !important;
+        width: 42px;
+        height: 42px;
+        line-height: 42px;
+        z-index: 999;
+    }
+
+    /* Penyesuaian Elemen Lain */
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .faq-question {
+        font-size: 1rem;
+        padding: 15px 20px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-col {
+        margin-bottom: 30px;
     }
 }
