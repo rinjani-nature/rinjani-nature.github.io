@@ -835,71 +835,87 @@ input:focus, select:focus, textarea:focus {
 }
 
 /* =========================================
-   11. RESPONSIVE (MOBILE & TABLET)
+  11. PERBAIKAN KHUSUS KHUSUS LAYAR HP (MOBILE)
    ========================================= */
-@media (max-width: 900px) {
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-    }
+
+/* 1. Mencegah SEMUA Badge Meluap Keluar dari Card/Gambar */
+.package-card, 
+.blog-card,
+.card-image,
+.blog-img {
+    position: relative !important;
+    overflow: hidden !important;
 }
 
 @media (max-width: 768px) {
-    .navbar .logo-text {
-        font-size: 1.1rem;
+    /* 2. Kunci Top Header agar Bersih & Mengunci Posisi */
+    .top-header {
+        position: relative;
+        z-index: 1002;
+        background-color: var(--dark-bg);
+        padding: 10px 0;
     }
 
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        background: var(--white);
-        padding: 20px;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    }
-    
-    .nav-links.active {
+    .top-header .container {
         display: flex;
+        justify-content: center !important; /* Rata tengah di HP */
+        align-items: center;
     }
 
-    .nav-links li {
-        margin: 10px 0;
+    .top-socials {
+        display: flex;
+        gap: 15px;
+        z-index: 1003;
     }
 
-    .hamburger {
-        display: block;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .faq-question {
+    .top-socials a {
         font-size: 1rem;
-        padding: 15px 20px;
     }
 
-    .section-title {
-        font-size: 1.8rem;
+    /* 3. Mencegah Seluruh Section Meluap Ke Atas */
+    .hero, .features, .packages, .blog-section {
+        position: relative;
+        z-index: 1;
     }
 
-    .float-wa {
-        width: 45px;
-        height: 45px;
-        bottom: 20px;
-        right: 20px;
-        font-size: 24px;
-    }
-}
-
-@media (max-width: 600px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
+    /* 4. POSISI TOMBOL WHATSAPP & BACK TO TOP (TIDAK BERTUMPUK) */
     
-    .footer-col {
-        margin-bottom: 30px;
+    /* Tombol Floating WhatsApp (Paling Bawah) */
+    .float-wa {
+        position: fixed !important;
+        bottom: 20px !important;    /* Posisi paling bawah kanan */
+        right: 20px !important;
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 28px !important;
+        z-index: 9999 !important;   /* Selalu di depan */
+    }
+
+    /* Tombol Back To Top (Tepat Di Atas WA) */
+    .back-to-top {
+        position: fixed !important;
+        bottom: 80px !important;    /* Dinaikkan 80px agar bebas dari tombol WA */
+        right: 23px !important;     /* Lurus simetris di atas WA */
+        width: 44px !important;
+        height: 44px !important;
+        line-height: 44px !important;
+        border-radius: 50% !important; /* Dibuat bulat agar serasi dengan WA */
+        z-index: 9998 !important;   /* Di bawah z-index WA sedikit */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* 5. Merapatkan Logo & Teks Rinjani Nature di HP */
+    .logo {
+        gap: 6px !important;
+    }
+
+    .nav-logo-img {
+        max-height: 40px !important;
+    }
+
+    .navbar .logo-text {
+        font-size: 1.05rem !important;
     }
 }
