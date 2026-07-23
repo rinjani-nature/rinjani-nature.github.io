@@ -531,46 +531,64 @@
                 </div>
             </div>
         </div>
-        
-        <a href="index.html" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
     </footer>
 
-    <script src="script.js"></script>
-    
+    <!-- TOMBOL FLOATING ACTION (WA Di Atas, Scroll Di Bawah) -->
     <a href="https://wa.me/6287820128581?text=Halo%20Rinjani%20Nature,%20saya%20ingin%20bertanya%20tentang%20paket%20trekking." class="float-wa" target="_blank">
-        <i class="fab fa-whatsapp my-float"></i>
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="#home" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- 1. SCRIPT FAQ ACCORDION -->
+    <script src="script.js"></script>
+
+    <!-- 1. SCRIPT FAQ ACCORDION & HAMBURGER -->
     <script>
-    const faqQuestions = document.querySelectorAll(".faq-question");
+    document.addEventListener("DOMContentLoaded", function() {
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll(".faq-question");
+        faqQuestions.forEach((question) => {
+            question.addEventListener("click", () => {
+                const item = question.parentElement;
+                const answer = item.querySelector(".faq-answer");
+                const icon = question.querySelector(".faq-icon");
+                const isActive = item.classList.contains("active");
 
-    faqQuestions.forEach((question) => {
-        question.addEventListener("click", () => {
-            const item = question.parentElement;
-            const answer = item.querySelector(".faq-answer");
-            const icon = question.querySelector(".faq-icon");
-            const isActive = item.classList.contains("active");
+                document.querySelectorAll(".faq-item").forEach((otherItem) => {
+                    otherItem.classList.remove("active");
+                    otherItem.querySelector(".faq-answer").style.maxHeight = null;
+                    const otherIcon = otherItem.querySelector(".faq-icon");
+                    if(otherIcon) {
+                        otherIcon.textContent = "+";
+                        otherIcon.style.transform = "rotate(0deg)";
+                    }
+                });
 
-            document.querySelectorAll(".faq-item").forEach((otherItem) => {
-                otherItem.classList.remove("active");
-                otherItem.querySelector(".faq-answer").style.maxHeight = null;
-                const otherIcon = otherItem.querySelector(".faq-icon");
-                if(otherIcon) {
-                    otherIcon.textContent = "+";
-                    otherIcon.style.transform = "rotate(0deg)";
-                }
+                if (!isActive) {
+                    item.classList.add("active");
+                    answer.style.maxHeight = answer.scrollHeight + "px"; 
+                    if(icon) {
+                        icon.textContent = "−";
+                        icon.style.transform = "rotate(180deg)";
+                    }
+                } 
             });
-
-            if (!isActive) {
-                item.classList.add("active");
-                answer.style.maxHeight = answer.scrollHeight + "px"; 
-                if(icon) {
-                    icon.textContent = "−";
-                    icon.style.transform = "rotate(180deg)";
-                }
-            } 
         });
+
+        // Hamburger Menu Mobile
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+        if (hamburger && navLinks) {
+            hamburger.addEventListener("click", function() {
+                navLinks.classList.toggle("active");
+            });
+            document.querySelectorAll(".nav-links a").forEach(link => {
+                link.addEventListener("click", () => {
+                    navLinks.classList.remove("active");
+                });
+            });
+        }
     });
     </script>
 
@@ -578,7 +596,7 @@
     <script>
     document.addEventListener("DOMContentLoaded", function() {
 
-        // --- TRACKING KLIK WHATSAPP ---
+        // Tracking WhatsApp
         const waButtons = document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"]');
         waButtons.forEach(btn => {
             btn.addEventListener("click", function() {
@@ -590,7 +608,7 @@
             });
         });
 
-        // --- TRACKING SELEKSI PAKET TREKKING ---
+        // Tracking Paket Trekking
         const packageButtons = document.querySelectorAll('.package-card .btn');
         packageButtons.forEach(btn => {
             btn.addEventListener("click", function() {
@@ -605,7 +623,7 @@
             });
         });
 
-        // --- TRACKING FORM SUBMISSION ---
+        // Tracking Form
         const contactForm = document.querySelector('.contact-form');
         if (contactForm) {
             contactForm.addEventListener("submit", function(e) {
@@ -619,7 +637,7 @@
             });
         }
 
-        // --- TRACKING KLIK SOSIAL MEDIA (TERMASUK TRIPADVISOR) ---
+        // Tracking Sosmed & TripAdvisor
         const socialLinks = document.querySelectorAll('.top-socials a, .social-icons a');
         socialLinks.forEach(link => {
             link.addEventListener("click", function() {
@@ -644,60 +662,7 @@
             });
         });
 
-        // --- TRACKING INTERAKSI FAQ ---
-        const faqButtons = document.querySelectorAll('.faq-question');
-        faqButtons.forEach(btn => {
-            btn.addEventListener("click", function() {
-                const parent = this.parentElement;
-                if (!parent.classList.contains('active')) { 
-                    const questionText = this.innerText.replace('+', '').replace('−', '').trim();
-                    gtag('event', 'faq_expand', {
-                        'event_category': 'Engagement',
-                        'event_label': questionText
-                    });
-                }
-            });
-        });
-
-        // --- TRACKING INTERNAL NAVIGASI LINK ---
-        const navLinks = document.querySelectorAll('a[href$=".html"]');
-        navLinks.forEach(link => {
-            link.addEventListener("click", function() {
-                const url = this.getAttribute('href');
-                if(url.substring(0,1) !== '#') {
-                    gtag('event', 'internal_link_click', {
-                        'event_category': 'Navigation',
-                        'event_label': url
-                    });
-                }
-            });
-        });
-
     });
     </script>
-
-    <!-- SCRIPT HAMBURGER MENU MOBILE -->
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const hamburger = document.querySelector(".hamburger");
-        const navLinks = document.querySelector(".nav-links");
-
-        if (hamburger && navLinks) {
-            hamburger.addEventListener("click", function() {
-                navLinks.classList.toggle("active");
-            });
-
-            // Tutup menu otomatis saat salah satu link diklik
-            document.querySelectorAll(".nav-links a").forEach(link => {
-                link.addEventListener("click", () => {
-                    navLinks.classList.remove("active");
-                });
-            });
-        }
-    });
-    </script>
-</body>
-</html>
-     
 </body>
 </html>
