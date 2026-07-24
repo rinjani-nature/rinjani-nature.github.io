@@ -496,54 +496,251 @@ ul {
 }
 
 /* =========================================
-   7. TRIPADVISOR SECTION
+   7. TRIPADVISOR SECTION (MODERN SLIDER)
    ========================================= */
-.top-socials a:hover .fa-tripadvisor,
-.social-icons a:hover .fa-tripadvisor {
-    color: #00af87 !important;
-}
-
 .tripadvisor-section {
     background-color: #ffffff;
-    text-align: center;
 }
 
-.ta-widget-wrapper {
+.ta-custom-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* BOX KIRI: GAMBAR + EXCELLENT */
+.ta-rating-box {
+    flex: 0 0 240px;
+    text-align: center;
+    padding: 20px 15px;
+    background: #fdfdfd;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+}
+
+.ta-badge-img {
+    max-width: 140px;
+    height: auto;
+    margin-bottom: 12px;
+    border-radius: 6px;
+}
+
+.ta-excellent-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.ta-circles {
+    color: #00aa6c; /* Warna Hijau Khas TripAdvisor */
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    margin-bottom: 6px;
+}
+
+.ta-review-count {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.btn-ta-write {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #00aa6c;
+    border: 1.5px solid #00aa6c;
+    border-radius: 20px;
+    transition: var(--transition);
+}
+
+.btn-ta-write:hover {
+    background-color: #00aa6c;
+    color: #ffffff;
+}
+
+/* BOX KANAN: SLIDER REVIEWS */
+.ta-slider-wrapper {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+.ta-reviews-slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding: 5px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.ta-reviews-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* KARTU REVIEW MODEREN */
+.ta-review-card {
+    flex: 0 0 calc(33.333% - 14px);
+    min-width: 250px;
+    scroll-snap-align: start;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    border-left: 4px solid #00aa6c; /* Accent Khas */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition);
+}
+
+.ta-review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.ta-user-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.ta-avatar {
+    width: 38px;
+    height: 38px;
+    background: #e8f5e9;
+    color: #2e7d32;
+    border-radius: 50%;
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
+    font-size: 0.9rem;
 }
 
-.btn-tripadvisor {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background-color: transparent;
-    color: #333333;
-    border: 2px solid #00af87;
-    padding: 12px 28px;
-    border-radius: 50px;
+.ta-user-info h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin: 0;
+    color: #222;
+}
+
+.ta-user-info span {
+    font-size: 0.75rem;
+    color: #888;
+}
+
+.ta-card-icon {
+    margin-left: auto;
+    color: #00aa6c;
+    font-size: 1.1rem;
+}
+
+.ta-card-stars {
+    color: #00aa6c;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.verified-icon {
+    color: #1b72e8;
+    font-size: 0.8rem;
+    margin-left: 4px;
+}
+
+.ta-review-card h5 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 6px;
+    font-family: var(--font-body);
+}
+
+.ta-review-card p {
+    font-size: 0.82rem;
+    color: #555;
+    line-height: 1.45;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.ta-read-link {
+    font-size: 0.8rem;
     font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
+    color: #D35400;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-.btn-tripadvisor i {
-    color: #00af87;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
+.ta-read-link:hover {
+    color: #e67e22;
 }
 
-.btn-tripadvisor:hover {
-    background-color: #00af87;
-    color: #ffffff;
+/* TOMBOL PANAH NAVIGASI SLIDER */
+.ta-slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    color: #333;
+    cursor: pointer;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: var(--transition);
 }
 
-.btn-tripadvisor:hover i {
-    color: #ffffff;
+.ta-slide-btn:hover {
+    background: #00aa6c;
+    color: #fff;
+    border-color: #00aa6c;
+}
+
+.prev-btn { left: 2px; }
+.next-btn { right: 2px; }
+
+/* RESPONSIVE LAYAR HP & TABLET */
+@media (max-width: 900px) {
+    .ta-custom-container {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .ta-rating-box {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .ta-review-card {
+        flex: 0 0 80%;
+    }
+
+    .ta-slide-btn {
+        display: none; /* Di HP bisa langsung di-swipe jari */
+    }
 }
 
 /* =========================================
