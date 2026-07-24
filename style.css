@@ -495,7 +495,7 @@ img {
 }
 
 /* =========================================
-   7. TRIPADVISOR SECTION (MODERN SLIDER)
+   7. TRIPADVISOR SECTION (SEBELAH KIRI & RINGKAS)
    ========================================= */
 .tripadvisor-section {
     background-color: #ffffff;
@@ -504,75 +504,83 @@ img {
 }
 
 .ta-custom-container {
-    display: flex;
+    display: flex !important;
+    flex-direction: row !important; /* Memastikan kotak rating tetap di KIRI */
     align-items: center;
-    gap: 40px;
-    margin-top: 30px;
+    gap: 25px;
+    margin-top: 20px;
     width: 100%;
 }
 
+/* KOTAK KIRI: GAMBAR + EXCELLENT (Dikecilkan & Rapi) */
 .ta-rating-box {
-    flex: 0 0 240px;
+    flex: 0 0 190px !important;    /* Lebar ringkas agar tidak memakan tempat */
     text-align: center;
-    padding: 20px 15px;
-    background: #fdfdfd;
-    border-radius: 12px;
-    border: 1px solid #eee;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    padding: 15px 10px !important;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
 }
 
 .ta-badge-img {
-    max-width: 140px;
+    max-width: 110px !important;   /* Gambar logo dikecilkan */
     height: auto;
-    margin: 0 auto 12px auto;
-    border-radius: 6px;
+    margin: 0 auto 8px auto !important;
+    border-radius: 4px;
 }
 
 .ta-excellent-title {
-    font-size: 1.3rem;
+    font-size: 1.1rem !important;  /* Tulisan EXCELLENT lebih pas */
     font-weight: 800;
     color: #1a1a1a;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px !important;
 }
 
 .ta-circles {
-    color: #00aa6c;
-    font-size: 1.2rem;
-    letter-spacing: 3px;
-    margin-bottom: 6px;
+    color: #00aa6c;                /* Hijau TripAdvisor */
+    font-size: 1rem !important;
+    letter-spacing: 2px;
+    margin-bottom: 4px !important;
 }
 
 .ta-review-count {
-    font-size: 0.85rem;
+    font-size: 0.78rem !important;
     color: #666;
-    margin-bottom: 15px;
+    margin-bottom: 10px !important;
 }
 
 .btn-ta-write {
     display: inline-block;
-    padding: 8px 16px;
-    font-size: 0.8rem;
+    padding: 6px 14px !important;  /* Tombol lebih ramping */
+    font-size: 0.75rem !important;
     font-weight: 600;
     color: #00aa6c;
     border: 1.5px solid #00aa6c;
     border-radius: 20px;
+    transition: var(--transition);
 }
 
+.btn-ta-write:hover {
+    background-color: #00aa6c;
+    color: #ffffff;
+}
+
+/* KOTAK KANAN: SLIDER KARTU REVIEW */
 .ta-slider-wrapper {
     flex: 1;
     position: relative;
     display: flex;
     align-items: center;
     overflow: hidden;
-    padding: 10px 0;
+    padding: 5px 0;
     width: 100%;
-    max-width: 100%;
 }
 
 .ta-reviews-slider {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     overflow-x: auto;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
@@ -586,15 +594,16 @@ img {
     display: none;
 }
 
+/* KARTU REVIEW LEBIH COMPACT */
 .ta-review-card {
-    flex: 0 0 calc(33.333% - 14px);
-    min-width: 250px;
+    flex: 0 0 calc(33.333% - 10px);
+    min-width: 220px;
     scroll-snap-align: start;
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 20px;
-    border-left: 4px solid #00aa6c;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    background: #fdfdfd;
+    border-radius: 10px;
+    padding: 15px !important;       /* Inner space lebih ringkas */
+    border-left: 3.5px solid #00aa6c;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -603,104 +612,89 @@ img {
 .ta-user-header {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 12px;
+    gap: 8px;
+    margin-bottom: 8px;
 }
 
 .ta-avatar {
-    width: 38px;
-    height: 38px;
+    width: 32px;
+    height: 32px;
     background: #e8f5e9;
     color: #2e7d32;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .ta-user-info h4 {
-    font-size: 0.9rem;
+    font-size: 0.85rem !important;
     font-weight: 700;
     margin: 0;
     color: #222;
 }
 
 .ta-user-info span {
-    font-size: 0.75rem;
+    font-size: 0.7rem !important;
     color: #888;
 }
 
 .ta-card-icon {
     margin-left: auto;
     color: #00aa6c;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .ta-card-stars {
     color: #00aa6c;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
 }
 
 .verified-icon {
     color: #1b72e8;
-    font-size: 0.8rem;
-    margin-left: 4px;
+    font-size: 0.75rem;
+    margin-left: 3px;
+}
+
+.ta-review-card h5 {
+    font-size: 0.88rem !important;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 4px;
 }
 
 .ta-review-card p.ta-review-text {
-    font-size: 0.82rem;
+    font-size: 0.78rem !important;
     color: #555;
-    line-height: 1.45;
-    margin-bottom: 12px;
+    line-height: 1.4;
+    margin-bottom: 10px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
-.ta-review-card.expanded p.ta-review-text {
-    display: block !important;
-    overflow: visible !important;
-    -webkit-line-clamp: unset !important;
+/* RESPONSIVE KHUSUS LAYAR HP (KOTAK RATING TETAP RAPI DI ATAS SAAT DI HP) */
+@media (max-width: 768px) {
+    .ta-custom-container {
+        flex-direction: column !important; /* Di HP menumpuk vertikal agar tidak sempit */
+        gap: 15px;
+    }
+
+    .ta-rating-box {
+        flex: 0 0 auto !important;
+        width: 100% !important;
+        max-width: 260px;
+        margin: 0 auto;
+    }
+
+    .ta-review-card {
+        flex: 0 0 82% !important;
+    }
 }
-
-.ta-read-link {
-    background: none;
-    border: none;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #D35400;
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.ta-slide-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: #ffffff;
-    border: 1px solid #ddd;
-    color: #333;
-    cursor: pointer;
-    z-index: 5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
-
-.prev-btn { left: 2px; }
-.next-btn { right: 2px; }
-
 /* =========================================
    8. GALLERY & BLOG
    ========================================= */
