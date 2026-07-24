@@ -742,6 +742,57 @@ ul {
         display: none; /* Di HP bisa langsung di-swipe jari */
     }
 }
+/* GAYA TEKS REVIEWS BISA DROPDOWN */
+.ta-review-card p.ta-review-text {
+    font-size: 0.82rem;
+    color: #555;
+    line-height: 1.45;
+    margin-bottom: 12px;
+    
+    /* Secara default dibatasi 3 baris */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* KETIKA AKTIF (DROPDOWN TERBUKA) */
+.ta-review-card.expanded p.ta-review-text {
+    display: block !important;
+    overflow: visible !important;
+    -webkit-line-clamp: unset !important;
+}
+
+/* TOMBOL READ MORE / SHOW LESS */
+.ta-read-link {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #D35400;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s ease;
+}
+
+.ta-read-link:hover {
+    color: #e67e22;
+}
+
+.ta-read-link i {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+/* Putar panah ke atas jika terbuka */
+.ta-review-card.expanded .ta-read-link i {
+    transform: rotate(180deg);
+}
 
 /* =========================================
    8. GALLERY & BLOG
