@@ -326,24 +326,99 @@
         <div class="container">
             <div class="section-header">
                 <h2>Recommended on TripAdvisor</h2>
-                <p>See what our adventurous guests have to say about their trekking experience.</p>
+                <p>We received excellent reviews on TripAdvisor from our happy adventurers.</p>
                 <div class="line"></div>
             </div>
-            
-            <div class="ta-widget-wrapper">
-                <!-- GAMBAR TRIPADVISOR -->
-                <a href="https://www.tripadvisor.com/PROFILE_ANDA" target="_blank" class="ta-image-link">
-                    <img src="images/tripadvisor.jpg" alt="TripAdvisor Reviews Rinjani Nature" class="ta-badge-img">
-                </a>
 
-                <!-- TOMBOL REVIEWS -->
-                <a href="https://www.tripadvisor.com/PROFILE_ANDA" target="_blank" class="btn-tripadvisor">
-                    <i class="fab fa-tripadvisor"></i> Read Our Reviews on TripAdvisor
-                </a>
+            <div class="ta-custom-container">
+                <!-- SISI KIRI: GAMBAR + EXCELLENT + RATING -->
+                <div class="ta-rating-box">
+                    <img src="images/tripadvisor.jpg" alt="TripAdvisor Badge" class="ta-badge-img">
+                    <h3 class="ta-excellent-title">EXCELLENT</h3>
+                    <div class="ta-circles">
+                        <span>●</span><span>●</span><span>●</span><span>●</span><span>●</span>
+                    </div>
+                    <p class="ta-review-count">Based on <strong>28 reviews</strong></p>
+                    <a href="https://www.tripadvisor.com/PROFILE_ANDA" target="_blank" class="btn-ta-write">
+                        <i class="fab fa-tripadvisor"></i> Leave a Review
+                    </a>
+                </div>
+
+                <!-- SISI KANAN: SLIDER KARTU REVIEWS -->
+                <div class="ta-slider-wrapper">
+                    <button class="ta-slide-btn prev-btn" id="taPrevBtn"><i class="fas fa-chevron-left"></i></button>
+                    
+                    <div class="ta-reviews-slider" id="taReviewsSlider">
+                        <!-- Card Review 1 -->
+                        <div class="ta-review-card">
+                            <div class="ta-user-header">
+                                <div class="ta-avatar"><i class="fas fa-user"></i></div>
+                                <div class="ta-user-info">
+                                    <h4>Happiness16444...</h4>
+                                    <span>1 year ago</span>
+                                </div>
+                                <i class="fab fa-tripadvisor ta-card-icon"></i>
+                            </div>
+                            <div class="ta-card-stars">●●●●● <i class="fas fa-check-circle verified-icon"></i></div>
+                            <h5>100% Recommend!</h5>
+                            <p>Overall great experience from the guide and porters. Very efficient with food and camp setup...</p>
+                            <a href="https://www.tripadvisor.com/PROFILE_ANDA" target="_blank" class="ta-read-link">Read more <i class="fas fa-arrow-right"></i></a>
+                        </div>
+
+                        <!-- Card Review 2 -->
+                        <div class="ta-review-card">
+                            <div class="ta-user-header">
+                                <div class="ta-avatar"><i class="fas fa-user"></i></div>
+                                <div class="ta-user-info">
+                                    <h4>Sarah W.</h4>
+                                    <span>1 year ago</span>
+                                </div>
+                                <i class="fab fa-tripadvisor ta-card-icon"></i>
+                            </div>
+                            <div class="ta-card-stars">●●●●● <i class="fas fa-check-circle verified-icon"></i></div>
+                            <h5>The Best Guide & Team!</h5>
+                            <p>Lenri and his team were amazing. They helped us so well on Mount Rinjani. Super kind and polite...</p>
+                            <a href="https://www.tripadvisor.com/PROFILE_ANDA" target="_blank" class="ta-read-link">Read more <i class="fas fa-arrow-right"></i></a>
+                        </div>
+
+                        <!-- Card Review 3 -->
+                        <div class="ta-review-card">
+                            <div class="ta-user-header">
+                                <div class="ta-avatar"><i class="fas fa-user"></i></div>
+                                <div class="ta-user-info">
+                                    <h4>Richard Sun</h4>
+                                    <span>1 year ago</span>
+                                </div>
+                                <i class="fab fa-tripadvisor ta-card-icon"></i>
+                            </div>
+                            <div class="ta-card-stars">●●●●● <i class="fas fa-check-circle verified-icon"></i></div>
+                            <h5>Beginners? No Problem!</h5>
+                            <p>Great Rinjani Trekking Experience. I recently completed a trek to the crater rim, totally worth it!</p>
+                            <a href="https://www.tripadvisor.com/PROFILE_ANDA" target="_blank" class="ta-read-link">Read more <i class="fas fa-arrow-right"></i></a>
+                        </div>
+
+                        <!-- Card Review 4 -->
+                        <div class="ta-review-card">
+                            <div class="ta-user-header">
+                                <div class="ta-avatar"><i class="fas fa-user"></i></div>
+                                <div class="ta-user-info">
+                                    <h4>Mark & Emma</h4>
+                                    <span>6 months ago</span>
+                                </div>
+                                <i class="fab fa-tripadvisor ta-card-icon"></i>
+                            </div>
+                            <div class="ta-card-stars">●●● Tombol● <i class="fas fa-check-circle verified-icon"></i></div>
+                            <h5>Unforgettable Trip</h5>
+                            <p>Delicious hot meals served on top of the mountain! Excellent service from Rinjani Nature team.</p>
+                            <a href="https://www.tripadvisor.com/PROFILE_ANDA" target="_blank" class="ta-read-link">Read more <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <button class="ta-slide-btn next-btn" id="taNextBtn"><i class="fas fa-chevron-right"></i></button>
+                </div>
             </div>
         </div>
     </section>
-
     <!-- SECTION BLOG 3 KOLOM -->
     <section class="blog-section section-padding bg-light">
         <div class="container">
