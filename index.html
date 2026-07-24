@@ -664,5 +664,46 @@
 
     });
     </script>
+
+    <!-- SCRIPT AUTO SLIDER WHY TREK WITH US (KHUSUS HP) -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const slider = document.querySelector(".features-grid");
+        
+        if (slider) {
+            let autoSlideInterval;
+            
+            function startAutoSlide() {
+                // Hanya berjalan di layar HP (lebar <= 768px)
+                if (window.innerWidth <= 768) {
+                    autoSlideInterval = setInterval(() => {
+                        const cardWidth = slider.querySelector(".feature-card").offsetWidth + 15; // Lebar kartu + gap
+                        const maxScroll = slider.scrollWidth - slider.clientWidth;
+                        
+                        // Jika sudah mentok di kanan, balik ke paling awal (kiri)
+                        if (slider.scrollLeft >= maxScroll - 5) {
+                            slider.scrollTo({ left: 0, behavior: 'smooth' });
+                        } else {
+                            // Geser ke kartu berikutnya (kanan ke kiri)
+                            slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                        }
+                    }, 3000); // 3000 ms = bergeser otomatis setiap 3 detik
+                }
+            }
+
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+
+            startAutoSlide();
+
+            // Hentikan sementara saat pengguna menyentuh/menggeser layar secara manual
+            slider.addEventListener("touchstart", stopAutoSlide);
+            slider.addEventListener("touchend", () => {
+                setTimeout(startAutoSlide, 2000); // Jalan lagi setelah 2 detik lepas sentuhan
+            });
+        }
+    });
+    </script>
 </body>
 </html>
