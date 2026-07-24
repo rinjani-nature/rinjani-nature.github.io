@@ -787,13 +787,13 @@ input:focus, select:focus, textarea:focus {
 }
 
 /* =========================================
-   11. FLOATING BUTTONS (GLOBAL DESKTOP & MOBILE)
+   11. FLOATING BUTTONS (DESKTOP & MOBILE)
    ========================================= */
 
 /* Tombol WA (Hijau) - POSISI ATAS */
 .float-wa {
     position: fixed !important;
-    bottom: 85px !important;       /* Terletak di Atas */
+    bottom: 85px !important;
     right: 20px !important;
     width: 48px !important;
     height: 48px !important;
@@ -816,7 +816,7 @@ input:focus, select:focus, textarea:focus {
 /* Tombol Scroll Up (Biru) - POSISI BAWAH */
 .back-to-top {
     position: fixed !important;
-    bottom: 20px !important;       /* Terletak di Paling Bawah */
+    bottom: 20px !important;
     right: 20px !important;
     width: 48px !important;
     height: 48px !important;
@@ -902,6 +902,49 @@ input:focus, select:focus, textarea:focus {
     .hero h1 {
         font-size: 2.2rem;
     }
+
+    /* SLIDER "WHY TREK WITH US" - RINGKAS & MUNGIL DI HP */
+    .features-grid {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;          
+        scroll-snap-type: x mandatory;         
+        -webkit-overflow-scrolling: touch;     
+        gap: 10px !important;                 
+        padding: 5px 10px 15px 10px !important; 
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .features-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .feature-card {
+        flex: 0 0 68% !important;             /* Dikecilkan ke 68% agar mungil & tidak makan tempat */
+        max-width: 68% !important;
+        scroll-snap-align: center;             
+        padding: 14px 10px !important;        
+        border-radius: 10px;
+        background: #ffffff;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .feature-card i {
+        font-size: 1.5rem !important;         
+        margin-bottom: 6px !important;
+    }
+
+    .feature-card h3 {
+        font-size: 0.9rem !important;
+        margin-bottom: 4px !important;
+    }
+
+    .feature-card p {
+        font-size: 0.78rem !important;
+        line-height: 1.35 !important;
+        margin-bottom: 0 !important;
+    }
 }
 
 @media (max-width: 600px) {
@@ -911,61 +954,5 @@ input:focus, select:focus, textarea:focus {
     
     .footer-col {
         margin-bottom: 30px;
-    }
-}
-
-/* =========================================
-  12. SLIDER "WHY TREK WITH US" KHUSUS HP (MOBILE)
-   ========================================= */
-@media (max-width: 768px) {
-
-    /* Mengubah grid menjadi flex horizontal yang bisa di-scroll/swipe */
-    .features-grid {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        overflow-x: auto !important;          /* Mengaktifkan scroll horizontal */
-        scroll-snap-type: x mandatory;         /* Efek magnet/snap pas digeser */
-        -webkit-overflow-scrolling: touch;     /* Geseran halus di HP iOS/Android */
-        gap: 15px !important;                 /* Jarak antar kartu lebih rapat */
-        padding: 10px 5px 20px 5px !important; /* Padding ruang bawah */
-    }
-
-    /* Menyembunyikan scrollbar bawah agar tampilan bersih */
-    .features-grid::-webkit-scrollbar {
-        display: none;
-    }
-    .features-grid {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-    }
-
-    /* Memperkecil ukuran kartu dan memposisikannya sebagai slider */
-    .feature-card {
-        flex: 0 0 80% !important;             /* Kartu memakan 80% lebar layar (menyisa sedikit ujung kartu berikutnya) */
-        max-width: 80% !important;
-        scroll-snap-align: center;             /* Kartu otomatis berhenti pas di tengah saat digeser */
-        padding: 20px 15px !important;         /* Memperkecil padding dalam kartu */
-        border-radius: 12px;
-        background: #ffffff;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    }
-
-    /* Memperkecil ukuran Ikon di dalam kartu */
-    .feature-card i {
-        font-size: 2rem !important;            /* Dikecilkan dari 2.5rem */
-        margin-bottom: 12px !important;
-    }
-
-    /* Memperkecil Judul Kartu */
-    .feature-card h3 {
-        font-size: 1.1rem !important;
-        margin-bottom: 8px !important;
-    }
-
-    /* Memperkecil Teks Deskripsi */
-    .feature-card p {
-        font-size: 0.85rem !important;
-        line-height: 1.5 !important;
-        margin-bottom: 0 !important;
     }
 }
