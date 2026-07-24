@@ -22,6 +22,13 @@
     box-sizing: border-box;
 }
 
+/* PERBAIKAN UTAMA: Mengunci layar agar tidak bocor/bergeser ke kanan di HP */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -31,6 +38,7 @@ body {
     line-height: 1.6;
     color: #444;
     background-color: var(--white);
+    position: relative;
 }
 
 h1, h2, h3, h4 {
@@ -54,6 +62,11 @@ ul {
     list-style: none;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* =========================================
    2. UTILITIES & BUTTONS
    ========================================= */
@@ -61,7 +74,7 @@ ul {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 
 .section-padding {
@@ -131,6 +144,8 @@ ul {
     padding: 8px 0;
     font-size: 0.9rem;
     border-bottom: 1px solid rgba(255,255,255,0.05);
+    width: 100%;
+    overflow: hidden;
 }
 
 .top-header .container {
@@ -158,12 +173,12 @@ ul {
 .navbar {
     background: var(--white);
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
+    position: relative !important; 
     z-index: 1000;
     height: 70px;
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 .nav-container {
@@ -246,7 +261,7 @@ ul {
    4. HERO SECTION
    ========================================= */
 .hero {
-    height: 90vh;
+    min-height: 85vh;
     background: url('images/danau-segara-anak.jpg') no-repeat center center/cover;
     position: relative;
     display: flex;
@@ -255,6 +270,7 @@ ul {
     text-align: center;
     color: var(--white);
     overflow: hidden;
+    width: 100%;
 }
 
 .hero-overlay {
@@ -285,8 +301,15 @@ ul {
     font-weight: 300;
 }
 
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
 .hero-buttons .btn {
-    margin: 0 10px;
+    margin: 0;
 }
 
 /* =========================================
@@ -318,7 +341,7 @@ ul {
 
 .packages-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
@@ -399,7 +422,7 @@ ul {
 .faq-container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 
 .section-title {
@@ -427,10 +450,6 @@ ul {
     transition: all 0.3s ease;
 }
 
-.faq-item:hover {
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-}
-
 .faq-question {
     width: 100%;
     border: none;
@@ -445,19 +464,12 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.faq-question:hover {
-    color: #e74c3c;
-    background-color: #fff5f5;
 }
 
 .faq-icon {
     font-size: 1.5rem;
     color: #e74c3c;
     font-weight: bold;
-    transition: transform 0.3s ease;
 }
 
 .faq-answer {
@@ -465,7 +477,6 @@ ul {
     overflow: hidden;
     transition: max-height 0.5s ease-out;
     background-color: #fafafa;
-    border-top: 1px solid transparent;
 }
 
 .faq-answer p {
@@ -473,26 +484,6 @@ ul {
     margin: 0;
     color: #555;
     line-height: 1.8;
-    font-size: 1rem;
-}
-
-.faq-item.active .faq-question {
-    background-color: #e74c3c;
-    color: #ffffff;
-}
-
-.faq-item.active .faq-icon {
-    color: #ffffff;
-    transform: rotate(45deg);
-}
-
-.faq-item.active .faq-answer {
-    border-top: 1px solid #eee;
-}
-
-.faq-answer strong {
-    color: #e74c3c;
-    font-weight: 600;
 }
 
 /* =========================================
@@ -500,6 +491,7 @@ ul {
    ========================================= */
 .tripadvisor-section {
     background-color: #ffffff;
+    overflow: hidden;
 }
 
 .ta-custom-container {
@@ -509,7 +501,6 @@ ul {
     margin-top: 30px;
 }
 
-/* BOX KIRI: GAMBAR + EXCELLENT */
 .ta-rating-box {
     flex: 0 0 240px;
     text-align: center;
@@ -536,7 +527,7 @@ ul {
 }
 
 .ta-circles {
-    color: #00aa6c; /* Warna Hijau Khas TripAdvisor */
+    color: #00aa6c;
     font-size: 1.2rem;
     letter-spacing: 3px;
     margin-bottom: 6px;
@@ -556,15 +547,8 @@ ul {
     color: #00aa6c;
     border: 1.5px solid #00aa6c;
     border-radius: 20px;
-    transition: var(--transition);
 }
 
-.btn-ta-write:hover {
-    background-color: #00aa6c;
-    color: #ffffff;
-}
-
-/* BOX KANAN: SLIDER REVIEWS */
 .ta-slider-wrapper {
     flex: 1;
     position: relative;
@@ -589,7 +573,6 @@ ul {
     display: none;
 }
 
-/* KARTU REVIEW MODEREN */
 .ta-review-card {
     flex: 0 0 calc(33.333% - 14px);
     min-width: 250px;
@@ -597,17 +580,11 @@ ul {
     background: #ffffff;
     border-radius: 12px;
     padding: 20px;
-    border-left: 4px solid #00aa6c; /* Accent Khas */
+    border-left: 4px solid #00aa6c;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: var(--transition);
-}
-
-.ta-review-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .ta-user-header {
@@ -660,39 +637,36 @@ ul {
     margin-left: 4px;
 }
 
-.ta-review-card h5 {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #222;
-    margin-bottom: 6px;
-    font-family: var(--font-body);
-}
-
-.ta-review-card p {
+.ta-review-card p.ta-review-text {
     font-size: 0.82rem;
     color: #555;
     line-height: 1.45;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
+.ta-review-card.expanded p.ta-review-text {
+    display: block !important;
+    overflow: visible !important;
+    -webkit-line-clamp: unset !important;
+}
+
 .ta-read-link {
+    background: none;
+    border: none;
     font-size: 0.8rem;
     font-weight: 600;
     color: #D35400;
+    cursor: pointer;
+    padding: 0;
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-.ta-read-link:hover {
-    color: #e67e22;
-}
-
-/* TOMBOL PANAH NAVIGASI SLIDER */
 .ta-slide-btn {
     position: absolute;
     top: 50%;
@@ -709,97 +683,17 @@ ul {
     align-items: center;
     justify-content: center;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    transition: var(--transition);
-}
-
-.ta-slide-btn:hover {
-    background: #00aa6c;
-    color: #fff;
-    border-color: #00aa6c;
 }
 
 .prev-btn { left: 2px; }
 .next-btn { right: 2px; }
-
-/* RESPONSIVE LAYAR HP & TABLET */
-@media (max-width: 900px) {
-    .ta-custom-container {
-        flex-direction: column;
-        gap: 25px;
-    }
-
-    .ta-rating-box {
-        flex: 0 0 auto;
-        width: 100%;
-        max-width: 320px;
-    }
-
-    .ta-review-card {
-        flex: 0 0 80%;
-    }
-
-    .ta-slide-btn {
-        display: none; /* Di HP bisa langsung di-swipe jari */
-    }
-}
-/* GAYA TEKS REVIEWS BISA DROPDOWN */
-.ta-review-card p.ta-review-text {
-    font-size: 0.82rem;
-    color: #555;
-    line-height: 1.45;
-    margin-bottom: 12px;
-    
-    /* Secara default dibatasi 3 baris */
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-/* KETIKA AKTIF (DROPDOWN TERBUKA) */
-.ta-review-card.expanded p.ta-review-text {
-    display: block !important;
-    overflow: visible !important;
-    -webkit-line-clamp: unset !important;
-}
-
-/* TOMBOL READ MORE / SHOW LESS */
-.ta-read-link {
-    background: none;
-    border: none;
-    outline: none;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #D35400;
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    transition: color 0.2s ease;
-}
-
-.ta-read-link:hover {
-    color: #e67e22;
-}
-
-.ta-read-link i {
-    font-size: 0.75rem;
-    transition: transform 0.3s ease;
-}
-
-/* Putar panah ke atas jika terbuka */
-.ta-review-card.expanded .ta-read-link i {
-    transform: rotate(180deg);
-}
 
 /* =========================================
    8. GALLERY & BLOG
    ========================================= */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 15px;
 }
 
@@ -808,17 +702,11 @@ ul {
     height: 240px;
     object-fit: cover;
     border-radius: 5px;
-    transition: var(--transition);
-}
-
-.gallery-grid img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
@@ -840,7 +728,6 @@ ul {
     display: inline-block;
     margin-top: 15px;
     color: var(--accent-color);
-    text-decoration: none;
     font-weight: 600;
 }
 
@@ -850,12 +737,12 @@ ul {
 .contact-wrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 40px;
 }
 
 .contact-info {
     flex: 1;
-    min-width: 300px;
+    min-width: 280px;
 }
 
 .info-item {
@@ -870,7 +757,7 @@ ul {
 
 .contact-form {
     flex: 1.5;
-    min-width: 300px;
+    min-width: 280px;
 }
 
 .form-group {
@@ -885,11 +772,6 @@ input, select, textarea {
     font-family: var(--font-body);
 }
 
-input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: var(--accent-color);
-}
-
 /* =========================================
    10. FOOTER
    ========================================= */
@@ -898,7 +780,7 @@ input:focus, select:focus, textarea:focus {
     color: #cccccc;
     padding: 60px 0 40px;
     font-size: 14px;
-    position: relative;
+    overflow: hidden;
 }
 
 .footer-grid {
@@ -920,27 +802,6 @@ input:focus, select:focus, textarea:focus {
     margin-bottom: 10px;
 }
 
-.trademark {
-    font-size: 12px;
-    opacity: 0.7;
-    margin-bottom: 20px;
-}
-
-.verified-section {
-    margin-top: 20px;
-}
-
-.verified-text {
-    font-size: 13px;
-    color: #f39c12;
-    margin-bottom: 5px;
-}
-
-.association-name {
-    font-size: 12px;
-    line-height: 1.4;
-}
-
 .contact-list {
     list-style: none;
     padding: 0;
@@ -954,29 +815,6 @@ input:focus, select:focus, textarea:focus {
     gap: 10px;
 }
 
-.contact-list li i {
-    width: 20px;
-    color: #ffffff;
-}
-
-.contact-list a {
-    color: #cccccc;
-}
-
-.legal-info p {
-    margin-bottom: 5px;
-    font-size: 13px;
-}
-
-.legal-info span {
-    display: inline-block;
-    width: 100px;
-}
-
-.social-icons {
-    margin-top: 20px;
-}
-
 .social-icons a {
     display: inline-block;
     width: 35px;
@@ -986,13 +824,7 @@ input:focus, select:focus, textarea:focus {
     border: 1px solid #555;
     border-radius: 50%;
     color: #fff;
-    margin-right: 10px;
-    transition: all 0.3s;
-}
-
-.social-icons a:hover {
-    background-color: var(--accent-color);
-    border-color: var(--accent-color);
+    margin-right: 8px;
 }
 
 .payment-icons {
@@ -1020,31 +852,17 @@ input:focus, select:focus, textarea:focus {
 
 .footer-links li a {
     color: #cccccc;
-    transition: 0.3s;
-}
-
-.footer-links li a::before {
-    content: "• ";
-    color: #777;
-    margin-right: 5px;
-}
-
-.footer-links li a:hover {
-    color: #ffffff;
-    padding-left: 5px;
 }
 
 /* =========================================
-   11. FLOATING BUTTONS (DESKTOP & MOBILE)
+   11. FLOATING BUTTONS
    ========================================= */
-
-/* Tombol WA (Hijau) - POSISI ATAS */
 .float-wa {
     position: fixed !important;
-    bottom: 85px !important;
-    right: 20px !important;
-    width: 48px !important;
-    height: 48px !important;
+    bottom: 80px !important;
+    right: 15px !important;
+    width: 46px !important;
+    height: 46px !important;
     border-radius: 50% !important;
     background-color: #25d366 !important;
     color: #ffffff !important;
@@ -1056,18 +874,15 @@ input:focus, select:focus, textarea:focus {
 }
 
 .float-wa i {
-    font-size: 26px !important;
-    margin: 0 !important;
-    transform: none !important;
+    font-size: 24px !important;
 }
 
-/* Tombol Scroll Up (Biru) - POSISI BAWAH */
 .back-to-top {
     position: fixed !important;
     bottom: 20px !important;
-    right: 20px !important;
-    width: 48px !important;
-    height: 48px !important;
+    right: 15px !important;
+    width: 46px !important;
+    height: 46px !important;
     border-radius: 50% !important;
     background-color: #007bff !important;
     color: #ffffff !important;
@@ -1079,53 +894,69 @@ input:focus, select:focus, textarea:focus {
 }
 
 .back-to-top i {
-    font-size: 20px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    transform: none !important;
+    font-size: 18px !important;
 }
 
 /* =========================================
-   12. RESPONSIVE MOBILE (HP)
+   12. RESPONSIVE MOBILE (HP & TABLET)
    ========================================= */
 @media (max-width: 900px) {
     .footer-grid {
         grid-template-columns: 1fr 1fr;
     }
+
+    .ta-custom-container {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .ta-rating-box {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .ta-review-card {
+        flex: 0 0 80%;
+    }
+
+    .ta-slide-btn {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
-    /* SOSMED HEADER DI KIRI MENTOK */
+    /* MENCEGAH OVERFLOW DI HP */
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+
     .top-header .container {
-        display: flex;
-        justify-content: flex-start !important;
-        align-items: center;
-        padding-left: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
     .top-socials {
-        display: flex;
-        gap: 15px;
+        gap: 12px;
     }
 
-    /* LOGO RAPAT DI HP */
     .logo {
         gap: 6px !important;
     }
 
     .nav-logo-img {
-        max-height: 40px !important;
+        max-height: 38px !important;
     }
 
     .navbar .logo-text {
-        font-size: 1.05rem !important;
+        font-size: 1rem !important;
     }
 
-    /* MENU HAMBURGER MOBILE */
     .hamburger {
         display: block !important;
     }
 
+    /* DROPDOWN MENU MOBILE PERBAIKAN LEBAR */
     .nav-links {
         display: none;
         flex-direction: column !important;
@@ -1134,7 +965,7 @@ input:focus, select:focus, textarea:focus {
         top: 70px;
         left: 0;
         background: var(--white);
-        padding: 20px;
+        padding: 15px 20px;
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         z-index: 999;
     }
@@ -1144,14 +975,32 @@ input:focus, select:focus, textarea:focus {
     }
 
     .nav-links li {
-        margin: 10px 0 !important;
+        margin: 8px 0 !important;
+        width: 100%;
+    }
+
+    .nav-links li a {
+        width: 100%;
     }
 
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
-    /* SLIDER "WHY TREK WITH US" - RINGKAS & MUNGIL DI HP */
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* SLIDER "WHY TREK WITH US" - RINGKAS & PAS DI HP */
+    .features.section-padding {
+        padding-top: 25px !important;
+        padding-bottom: 25px !important;
+    }
+
+    .features .section-header {
+        margin-bottom: 20px !important;
+    }
+
     .features-grid {
         display: flex !important;
         flex-wrap: nowrap !important;
@@ -1159,9 +1008,10 @@ input:focus, select:focus, textarea:focus {
         scroll-snap-type: x mandatory;         
         -webkit-overflow-scrolling: touch;     
         gap: 10px !important;                 
-        padding: 5px 10px 15px 10px !important; 
+        padding: 5px 5px 15px 5px !important; 
         -ms-overflow-style: none;
         scrollbar-width: none;
+        width: 100%;
     }
 
     .features-grid::-webkit-scrollbar {
@@ -1169,10 +1019,10 @@ input:focus, select:focus, textarea:focus {
     }
 
     .feature-card {
-        flex: 0 0 68% !important;             /* Dikecilkan ke 68% agar mungil & tidak makan tempat */
-        max-width: 68% !important;
+        flex: 0 0 75% !important;             
+        max-width: 75% !important;
         scroll-snap-align: center;             
-        padding: 14px 10px !important;        
+        padding: 14px 12px !important;        
         border-radius: 10px;
         background: #ffffff;
         box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
