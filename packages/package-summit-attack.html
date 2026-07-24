@@ -56,14 +56,16 @@
         </div>
     </div>
 
-    <nav class="navbar">
-         <a href="index.html" class="logo">
+   <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
                 <img src="../images/logoexpedition.png" alt="Rinjani Nature" class="nav-logo-img">
                 <span class="logo-text">
                     <span class="brand-rinjani">Rinjani</span> 
                     <span class="brand-nature">Nature</span>
                 </span>
             </a>
+
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../index.html#packages" class="active">Packages</a></li>
@@ -71,9 +73,13 @@
                 <li><a href="../blog/blog-list.html">Blog</a></li>
                 <li><a href="../index.html#contact">Contact Us</a></li>
             </ul>
+
+            <!-- TOMBOL HAMBURGER UNTUK HP -->
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </nav>
-
     <header class="page-header" style="background: url('https://images.unsplash.com/photo-1545562083-c583d014b2b7?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;">
         <div class="overlay-dark"></div>
         <div class="container header-content">
@@ -220,6 +226,25 @@
     </footer>
     
     <a href="https://wa.me/6287820128581?text=Hi,%20question%20about%20Summit%20Attack" class="float-wa" target="_blank"><i class="fab fa-whatsapp my-float"></i></a>
-
+    <!-- SCRIPT HAMBURGER MENU MOBILE -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+        
+        if (hamburger && navLinks) {
+            hamburger.addEventListener("click", function() {
+                navLinks.classList.toggle("active");
+            });
+            document.querySelectorAll(".nav-links a").forEach(link => {
+                link.addEventListener("click", () => {
+                    navLinks.classList.remove("active");
+                });
+            });
+        }
+    });
+    </script>
+</body>
+</html>
 </body>
 </html>
