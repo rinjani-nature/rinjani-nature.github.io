@@ -214,9 +214,10 @@ img {
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
     text-decoration: none;
     height: 100%;
+    margin-left: -8px; /* Menggeser seluruh logo ke kiri */
 }
 
 .nav-logo-img {
