@@ -233,9 +233,6 @@ img {
     font-weight: 700;
     letter-spacing: 1px;
     white-space: nowrap;
-    margin-left: 0; /* Ubah sesuai kebutuhan, misalnya 0 atau nilai negatif seperti -10px */
-    padding-left: 1px; /* Kurangi nilai padding jika ada */
-}
 }
 
 .brand-rinjani {
